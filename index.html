@@ -1,16 +1,176 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon et icônes de marque -->
+    <link rel="icon" type="image/svg+xml" href="/images/SVG/icon-logo.svg" />
+    <link rel="apple-touch-icon" href="/images/SVG/icon-logo.svg" />
+    
+    <!-- Titre par défaut (sera remplacé par React Helmet) -->
+    <title>MELIOZ - Accueil</title>
+    <meta name="description" content="L'agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit. Donnez vie à vos ambitions." />
+    
+    <!-- Balises Open Graph (Partage Réseaux Sociaux) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MELIOZ" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://agencemelioz.com" />
+    <meta property="og:title" content="MELIOZ - Agence Web & Produit à Paris" />
+    <meta property="og:description" content="L'agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit." />
+    <meta property="og:image" content="https://agencemelioz.com/images/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo minimaliste vert Melioz sur fond clair" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MELIOZ - Agence Web & Produit à Paris" />
+    <meta name="twitter:description" content="L'agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit." />
+    <meta name="twitter:image" content="https://agencemelioz.com/images/og-image.svg" />
+    
+    <!-- SEO supplémentaires -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="MELIOZ" />
+    <meta name="geo.region" content="FR-75" />
+    <meta name="geo.placename" content="Paris" />
+    <meta name="theme-color" content="#B2C2A2" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://agencemelioz.com" />
+    
+    <!-- Polices Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Melioz - Agence Web</title>
-  <script type="module" crossorigin src="/assets/index-BF2m7hUO.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CB3rtafg.css">
-</head>
+    
+    <!-- Données structurées JSON-LD pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "MELIOZ",
+      "url": "https://agencemelioz.com",
+      "logo": "https://agencemelioz.com/images/SVG/icon-logo.svg",
+      "image": "https://agencemelioz.com/images/og-image.svg",
+      "description": "Agence digitale parisienne spécialisée en design UX/UI, développement web sur-mesure et stratégie produit pour TPE et PME.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "priceRange": "€€",
+      "telephone": "+33123456789",
+      "email": "contact@melioz.fr",
+      "sameAs": [
+        "https://www.linkedin.com/company/melioz"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services MELIOZ",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Développement Web",
+              "description": "Sites vitrines, applications web et e-commerce développés avec les technologies les plus modernes."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Design UI/UX",
+              "description": "Interfaces élégantes et intuitives conçues pour maximiser l'engagement et les conversions."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stratégie Digitale",
+              "description": "SEO, analytics et optimisation de la performance pour maximiser votre visibilité."
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Données structurées pour le site web (sitelinks) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MELIOZ",
+      "url": "https://agencemelioz.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://agencemelioz.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Navigation pour les sitelinks -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Accueil",
+          "url": "https://agencemelioz.com/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Services",
+          "url": "https://agencemelioz.com/services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Expertise",
+          "url": "https://agencemelioz.com/expertise"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Réalisations",
+          "url": "https://agencemelioz.com/realisations"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact",
+          "url": "https://agencemelioz.com/contact"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Devis",
+          "url": "https://agencemelioz.com/devis"
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-DV2pVCgI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CB3rtafg.css">
+  </head>
   <body>
     <div id="root"></div>
   </body>
