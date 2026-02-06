@@ -1,0 +1,12 @@
+{
+  "name": "melioz-site",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@vercel/node": "^5.5.32"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.5.3"
+  }
+}
