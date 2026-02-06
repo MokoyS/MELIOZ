@@ -1,0 +1,23 @@
+{
+  "name": "Agence MELIOZ",
+  "short_name": "MELIOZ",
+  "description": "Chez Melioz, nous croyons que chaque entreprise mérite une présence digitale à la hauteur de ses ambitions. Notre équipe d'experts combine créativité, expertise technique et vision stratégique pour transformer vos idées en réalité.",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#B2C2A2",
+  "background_color": "#F8F9F5",
+  "display": "standalone",
+  "start_url": "/"
+}

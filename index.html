@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Favicon et icônes de marque -->
-    <link rel="icon" type="image/svg+xml" href="/images/SVG/icon-logo.svg" />
-    <link rel="apple-touch-icon" href="/images/SVG/icon-logo.svg" />
+    <!-- Favicon ICO pour compatibilité maximale (Google préfère ce format) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Favicon SVG pour navigateurs modernes -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Favicon PNG pour Google et autres services -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Manifest pour PWA -->
+    <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Titre par défaut (sera remplacé par React Helmet) -->
     <title>MELIOZ - Accueil</title>
