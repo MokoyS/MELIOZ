@@ -1,0 +1,11 @@
+# robots.txt pour MELIOZ
+# Autoriser l'indexation de tout le site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agencemelioz.com/sitemap.xml
+
+# Bloquer les pages d'administration
+Disallow: /admin
