@@ -1,6 +1,7 @@
 import { Lightbulb, Pencil, Rocket } from 'lucide-react';
 import { motion } from '../lib/framer-motion';
 import { baseViewport, baseTransition, quickTransition, fadeInUp, fadeIn, scaleIn } from '../lib/motion';
+import { NumberTicker } from '@/components/magicui/number-ticker';
 
 export default function Process() {
   const steps = [
@@ -255,7 +256,13 @@ export default function Process() {
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20 rounded-full">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-text font-semibold">Garantie de livraison sous 15 jours</span>
+            <span className="text-text font-semibold">
+              Garantie de livraison sous{' '}
+              <span className="tabular-nums">
+                <NumberTicker value={15} className="font-semibold text-text" />
+              </span>
+              {' '}jours
+            </span>
           </div>
         </motion.div>
       </div>

@@ -1,16 +1,34 @@
 import { CheckCircle2, XCircle } from 'lucide-react';
 import { motion } from '../lib/framer-motion';
 import { baseViewport, baseTransition, quickTransition, fadeInUp } from '../lib/motion';
+import { NumberTicker } from '@/components/magicui/number-ticker';
 
 export default function ProblemSolution() {
   const pains = [
     {
       title: 'Non "Responsive" (Inadapté au mobile)"',
-      description: "La perte de plus de 60% de vos clients potentiels. Aujourd'hui, la majorité des recherches se font sur mobile. Si votre site n'est pas adapté, vous êtes invisible pour eux.",
+      description: (
+        <>
+          La perte de plus de{' '}
+          <span className="tabular-nums font-bold text-accent">
+            <NumberTicker value={60} className="font-bold text-accent" />
+            %
+          </span>{' '}
+          de vos clients potentiels. Aujourd&apos;hui, la majorité des recherches se font sur mobile. Si votre site n&apos;est pas adapté, vous êtes invisible pour eux.
+        </>
+      ),
     },
     {
       title: 'Chargement lent',
-      description: '40% de perte de trafic immédiate',
+      description: (
+        <>
+          <span className="tabular-nums font-bold text-accent">
+            <NumberTicker value={40} delay={0.2} className="font-bold text-accent" />
+            %
+          </span>{' '}
+          de perte de trafic immédiate
+        </>
+      ),
     },
     {
       title: 'UX  complexe',
@@ -181,7 +199,7 @@ export default function ProblemSolution() {
                     <h4 className="text-base font-semibold text-text group-hover/item:text-accent transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-text/70 leading-relaxed">{item.description}</p>
+                    <div className="text-sm text-text/70 leading-relaxed">{item.description}</div>
                   </div>
                 </motion.div>
               ))}
