@@ -128,7 +128,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO
-        title="MELIOZ - Services"
+        title="Nos Services Web, Design & Stratégie | MELIOZ Paris"
         description="Découvrez nos expertises : développement sur-mesure, design d'interface et accompagnement marketing pour votre succès numérique."
         canonical="/services"
       />

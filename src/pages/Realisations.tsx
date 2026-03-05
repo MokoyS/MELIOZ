@@ -52,7 +52,7 @@ export default function Realisations() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO
-        title="MELIOZ - Réalisations"
+        title="Nos Réalisations & Projets Web | MELIOZ Agence Paris"
         description="Explorez nos projets et études de cas. Des solutions digitales innovantes conçues par l'agence MELIOZ."
         canonical="/realisations"
       />

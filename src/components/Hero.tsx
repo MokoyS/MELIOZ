@@ -86,6 +86,9 @@ export default function Hero() {
             src="/favicon.svg"
             alt="Melioz Logo"
             className="w-5 h-5 object-contain"
+            loading="lazy"
+            width={20}
+            height={20}
           />
 
 

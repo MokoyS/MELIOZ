@@ -132,18 +132,9 @@ export default function BookACall() {
                 </p>
               </div>
 
-              {/* Intégration Cal.com - Remplacez VOTRE_USERNAME par votre nom d'utilisateur Cal.com */}
-              <div className="w-full">
-                <iframe
-                  src="https://cal.com/VOTRE_USERNAME/15min"
-                  width="100%"
-                  height="700"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="Calendrier de réservation"
-                  className="rounded-[24px]"
-                />
+              {/* TODO: Remplacer VOTRE_USERNAME par le vrai username Cal.com */}
+              <div className="text-center p-8 border border-secondary/20 rounded-2xl">
+                <p className="text-secondary">Calendrier en cours de configuration. Contactez-nous directement.</p>
               </div>
             </div>
           )}

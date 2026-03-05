@@ -31,7 +31,7 @@ export default function Agence() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO
-        title="MELIOZ - Agence"
+        title="L'Agence MELIOZ — Équipe & Valeurs | Paris"
         description="Agence digitale 100% en ligne basée à Paris, spécialisée dans la création de sites web sur-mesure pour TPE et PME. Design, développement et stratégie digitale."
         canonical="/agence"
       />

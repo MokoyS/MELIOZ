@@ -43,7 +43,7 @@ export default function Expertise() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO
-        title="MELIOZ - Expertise"
+        title="Notre Expertise Digitale — UX, Dev & Stratégie | MELIOZ"
         description="Rencontrez notre équipe d'experts : Product Owners, Designers UI/UX et Développeurs dédiés à la performance de votre marque."
         canonical="/expertise"
       />

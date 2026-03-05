@@ -68,9 +68,9 @@ export default function Contact() {
             <div className="p-4 bg-primary/10 rounded-full w-20 h-20 mx-auto mb-8 flex items-center justify-center">
               <CheckCircle className="w-10 h-10 text-primary" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-text mb-6 font-display">
+            <h2 className="text-4xl sm:text-5xl font-bold text-text mb-6 font-display">
               Message envoyé !
-            </h1>
+            </h2>
             <p className="text-xl text-text/70 mb-10 font-sans">
               Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais.
             </p>
