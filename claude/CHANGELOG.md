@@ -10,6 +10,17 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### feat — Animations scroll BlurFade sur sections principales (Task 8) — 2026-03-05
+
+- audit: `BentoAbout.tsx` — déjà animé via `motion.div` avec `whileInView="visible"` et `viewport={{ once: true }}` — aucune modification
+- feat: `AboutSection.tsx` — ajout BlurFade sur 5 éléments successifs (badge, titre, §1, §2, lien CTA) avec delays 0.1→0.5s ; colonne visuelle `FloatingBlocks` enveloppée dans un BlurFade delay=0.2s
+- feat: `ContactPreFooter.tsx` — ajout BlurFade sur 3 éléments colonne gauche (titre, paragraphe, CTA) delays 0.1/0.25/0.4s ; carte Paris (visuel complet) enveloppée dans BlurFade delay=0.2s
+- feat: `CTADevis.tsx` — ajout BlurFade sur 3 éléments (h2, paragraphe, lien "Réserver un appel") delays 0.1/0.25/0.4s
+- style: toutes les BlurFade utilisent `inView={true}` pour déclenchement au scroll, `yOffset=6` par défaut (subtil), `duration=0.4s` par défaut
+- Aucune régression TypeScript : toutes les erreurs TS constatées existaient avant cette Task (BentoAbout, BentoExperience, FloatingBlocks, OptimizedImage, Process, BookACall, PlanSite, Portfolio)
+
+---
+
 ### feat — Remplacement icônes génériques par MagicCard + BorderBeam (Task 6) — 2026-03-05
 
 - refactor: `ServicesPreview.tsx` — suppression des icônes Lucide décoratives (Code2, PenTool, TrendingUp, Rocket) et de leurs champs `icon`, `color`, `bgColor` dans le tableau `services`

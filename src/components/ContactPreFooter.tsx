@@ -1,4 +1,5 @@
 import { ArrowRight, MapPin } from 'lucide-react';
+import { BlurFade } from '@/components/magicui/blur-fade';
 
 export default function ContactPreFooter() {
   return (
@@ -6,23 +7,29 @@ export default function ContactPreFooter() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-4 sm:mb-6">
-              Contactez-nous dès aujourd'hui
-            </h2>
-            <p className="text-base sm:text-lg text-text/70 mb-6 sm:mb-8 leading-relaxed">
-              Un projet ? Une problématique ? Posez-nous vos questions et obtenez un regard expert sur votre stratégie actuelle.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all duration-300 text-sm sm:text-base"
-            >
-              <span>Nous contacter</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            </a>
+            <BlurFade delay={0.1} inView>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-4 sm:mb-6">
+                Contactez-nous dès aujourd'hui
+              </h2>
+            </BlurFade>
+            <BlurFade delay={0.25} inView>
+              <p className="text-base sm:text-lg text-text/70 mb-6 sm:mb-8 leading-relaxed">
+                Un projet ? Une problématique ? Posez-nous vos questions et obtenez un regard expert sur votre stratégie actuelle.
+              </p>
+            </BlurFade>
+            <BlurFade delay={0.4} inView>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all duration-300 text-sm sm:text-base"
+              >
+                <span>Nous contacter</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </a>
+            </BlurFade>
           </div>
 
           {/* Composant Paris - visuel minimaliste */}
-          <div className="relative order-1 lg:order-2">
+          <BlurFade delay={0.2} inView className="relative order-1 lg:order-2">
             <div className="p-6 sm:p-8 bg-text rounded-xl sm:rounded-2xl text-white">
               <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="p-2.5 sm:p-3 bg-white/10 rounded-lg sm:rounded-xl">
@@ -61,7 +68,7 @@ export default function ContactPreFooter() {
                 </p>
               </div>
             </div>
-          </div>
+          </BlurFade>
         </div>
       </div>
     </section>
