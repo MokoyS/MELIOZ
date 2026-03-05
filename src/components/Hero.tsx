@@ -1,6 +1,8 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from '../lib/framer-motion';
 import { baseTransition, slowTransition, fadeInUp } from '../lib/motion';
+import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
+import { BlurFade } from '@/components/magicui/blur-fade';
 
 export default function Hero() {
 
@@ -112,12 +114,14 @@ export default function Hero() {
             Votre expertise mérite
           </motion.span>
           <motion.span
-            className="relative inline-block text-primary"
+            className="relative inline-block"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            une presence en ligne
+            <AnimatedGradientText className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight">
+              une présence en ligne
+            </AnimatedGradientText>
             <motion.span
               className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-primary/20 -z-10 rounded-full"
               initial={{ scaleX: 0 }}
@@ -136,27 +140,27 @@ export default function Hero() {
         </motion.h1>
 
         {/* Subheadline - Copywriting orienté bénéfices avec animation */}
-        <motion.p
-          className="text-xl sm:text-2xl md:text-3xl text-text/80 mb-6 max-w-3xl mx-auto leading-relaxed font-medium px-2"
-          variants={fadeInUp}
-          transition={{ ...slowTransition, delay: 0.8 }}
-        >
-          Transformez votre présence digitale en un
-          <span className="relative inline-block text-primary font-semibold whitespace-nowrap">
-            levier de croissance performant
-            <span className="absolute -bottom-1 left-0 right-0 h-1 sm:h-1.5 bg-primary/30 rounded-full" />
-          </span>
-          .
-        </motion.p>
+        <BlurFade delay={0.9} duration={0.6} className="mb-6">
+          <p
+            className="text-xl sm:text-2xl md:text-3xl text-text/80 max-w-3xl mx-auto leading-relaxed font-medium px-2"
+          >
+            Transformez votre présence digitale en un{' '}
+            <span className="relative inline-block text-primary font-semibold whitespace-nowrap">
+              levier de croissance performant
+              <span className="absolute -bottom-1 left-0 right-0 h-1 sm:h-1.5 bg-primary/30 rounded-full" />
+            </span>
+            .
+          </p>
+        </BlurFade>
 
         {/* Value Proposition - Copywriting clair */}
-        <motion.p
-          className="text-base sm:text-lg md:text-xl text-text/70 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-2"
-          variants={fadeInUp}
-          transition={{ ...slowTransition, delay: 0.6 }}
-        >
-          Design d'expérience, ingénierie web et stratégie d'acquisition pour répondre à vos enjeux de digitalisation et de croissance.
-        </motion.p>
+        <BlurFade delay={1.1} duration={0.6} className="mb-8 sm:mb-12">
+          <p
+            className="text-base sm:text-lg md:text-xl text-text/70 max-w-2xl mx-auto leading-relaxed px-2"
+          >
+            Design d'expérience, ingénierie web et stratégie d'acquisition pour répondre à vos enjeux de digitalisation et de croissance.
+          </p>
+        </BlurFade>
 
         {/* CTA Buttons - Modern Design */}
         <motion.div

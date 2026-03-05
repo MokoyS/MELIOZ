@@ -10,6 +10,17 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### feat — Hero amélioré avec AnimatedGradientText + BlurFade (Task 5) — 2026-03-05
+
+- feat: `AnimatedGradientText` appliqué sur "une présence en ligne" (ligne centrale du H1) — remplace la couleur fixe `text-primary` par le dégradé animé sauge → lichen → terre cuite
+- feat: `BlurFade` (delay=0.9s, duration=0.6s) sur le sous-titre "Transformez votre présence digitale..."
+- feat: `BlurFade` (delay=1.1s, duration=0.6s) sur le paragraphe value proposition
+- style: animations Framer Motion existantes sur le H1 et les CTA conservées intégralement (motion.span avec initial/animate, motion.span soulignement)
+- fix: orthographe "presence" corrigée en "présence" dans le H1
+- Aucune régression TypeScript : 21 erreurs préexistantes inchangées, zéro nouvelle erreur sur Hero.tsx
+
+---
+
 ### feat — Installation Magic UI (Task 4) — 2026-03-05
 
 - feat: créé `src/components/magicui/` avec 5 composants Magic UI
