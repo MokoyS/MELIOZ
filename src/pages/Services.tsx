@@ -3,7 +3,6 @@ import { ArrowRight, Code2, PenTool, TrendingUp, Rocket, Wrench, HeadphonesIcon,
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import RealisationsPreview from '../components/RealisationsPreview';
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -174,10 +173,10 @@ export default function Services() {
         </section>
 
         {/* Réalisations Preview */}
-        <RealisationsPreview />
+        {/* <RealisationsPreview /> */}
 
         {/* CTA Section */}
-        <section className="py-16 bg-primary/5 border-y border-secondary/20 mb-20">
+        <section className="py-16 bg-white border-y border-secondary/20 mb-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text mb-4">
               Donnons une nouvelle dimension à votre présence digitale.
