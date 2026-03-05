@@ -10,6 +10,24 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### docs — Checklist finale et documentation (Task 14) — 2026-03-05
+
+- docs: checklist de mise en ligne complétée dans claude/PLAN.md
+- verified: TypeScript 0 erreurs, build propre (1.54s, 22 chunks)
+- verified: .env.local dans .gitignore (règle `*.local` couvre .env.local)
+- verified: .env.example commité, jamais de secrets en dur dans le code
+- verified: sitemap.xml, robots.txt, site.webmanifest conformes
+
+#### Points restants avant mise en production
+
+1. **Cal.com URL** : Remplacer `VOTRE_USERNAME` dans BookACall.tsx par le vrai username
+2. **OG image PNG** : Créer une image 1200×630 PNG pour un meilleur partage social (actuellement SVG)
+3. **Test Lighthouse** : Lancer un audit Lighthouse en production sur agencemelioz.com
+4. **Test formulaire** : Tester l'envoi du formulaire de contact en production (Resend)
+5. **Admin sécurité** : Les credentials admin sont côté client (VITE_) — envisager Vercel Password Protection ou serverless auth pour la route /admin
+
+---
+
 ### fix — Optimisation des images — width/height obligatoires, lazy loading, WebP (Task 9) — 2026-03-05
 
 - refactor: `OptimizedImage.tsx` — interface remaniée : `width` et `height` deviennent des props obligatoires typées `number` (plus `extends ImgHTMLAttributes` — trop permissif). `decoding="async"` conservé. Props `style` et `className` explicites. Le spread `...props` est retiré pour forcer la discipline des attributs image.
