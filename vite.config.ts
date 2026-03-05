@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 // Plugin pour gérer les routes API directement dans Vite
 function apiPlugin() {
@@ -220,6 +221,11 @@ function apiPlugin() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), apiPlugin()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
     // Optimisations de build pour la production
     target: 'esnext',

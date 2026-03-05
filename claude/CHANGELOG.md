@@ -10,6 +10,16 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### feat — Installation shadcn/ui (Task 3) — 2026-03-05
+
+- feat: alias `@` configuré dans vite.config.ts et tsconfig.app.json
+- feat: créé src/lib/utils.ts avec fonction cn (clsx + tailwind-merge)
+- feat: components.json shadcn/ui initialisé
+- feat: composants shadcn/ui installés : card, badge, button dans src/components/ui/
+- install: clsx, tailwind-merge, class-variance-authority ajoutés aux dépendances
+
+---
+
 ### fix — Corrections critiques (Task 2) — 2026-03-05
 
 #### 1. `public/site.webmanifest` — Icônes corrigées
