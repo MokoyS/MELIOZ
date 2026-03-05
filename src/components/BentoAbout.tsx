@@ -1,7 +1,7 @@
-import { motion } from '../lib/framer-motion';
+import { motion, type Variants } from '../lib/framer-motion';
 import { MousePointer2, PenTool, MapPin } from 'lucide-react';
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -12,7 +12,7 @@ const containerVariants = {
   },
 };
 
-const tileVariants = {
+const tileVariants: Variants = {
   hidden: { opacity: 0, y: 20, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -20,7 +20,7 @@ const tileVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
   hover: {
@@ -28,13 +28,13 @@ const tileVariants = {
     scale: 1.02,
     transition: {
       duration: 0.3,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
 };
 
 // Animation blob pour la tuile "Mindset"
-const blobVariants = {
+const blobVariants: Variants = {
   animate: {
     scale: [1, 1.1, 0.9, 1],
     rotate: [0, 5, -5, 0],
@@ -47,32 +47,32 @@ const blobVariants = {
     transition: {
       duration: 8,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 };
 
 // Animation de rotation pour le badge
-const rotateVariants = {
+const rotateVariants: Variants = {
   animate: {
     rotate: 360,
     transition: {
       duration: 20,
       repeat: Infinity,
-      ease: 'linear',
+      ease: 'linear' as const,
     },
   },
 };
 
 // Animation pulse pour le point sur la carte
-const pulseVariants = {
+const pulseVariants: Variants = {
   animate: {
     scale: [1, 1.3, 1],
     opacity: [0.6, 1, 0.6],
     transition: {
       duration: 2,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 };

@@ -1,4 +1,4 @@
-import { ArrowRight, Home, Briefcase, Users, Award, FolderOpen, MessageSquare, FileText, Shield, Map } from 'lucide-react';
+import { ArrowRight, Home, Users, MessageSquare, FileText, Shield, Map } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';

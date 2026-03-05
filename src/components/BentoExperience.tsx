@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from '../lib/framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, type Variants } from '../lib/framer-motion';
 
 // Couleurs strictes selon le PRD
 const COLORS = {
@@ -10,7 +10,7 @@ const COLORS = {
   text: '#2D3427', // Pour contraste élevé sur #B2C2A2
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -21,7 +21,7 @@ const containerVariants = {
   },
 };
 
-const tileVariants = {
+const tileVariants: Variants = {
   hidden: { opacity: 0, y: 20, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -29,7 +29,7 @@ const tileVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
   hover: {
@@ -37,7 +37,7 @@ const tileVariants = {
     scale: 1.02,
     transition: {
       duration: 0.3,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
 };
@@ -323,8 +323,7 @@ const MagneticBadgeTile = () => {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current || !badgeRef.current) return;
-    
-    const containerRect = containerRef.current.getBoundingClientRect();
+
     const badgeRect = badgeRef.current.getBoundingClientRect();
     
     // Centre du badge dans le container

@@ -206,7 +206,6 @@ export default function Process() {
                 <motion.div
                   className="inline-flex p-4 bg-primary rounded-xl mb-6 relative z-10 shadow-md"
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   animate={{
                     boxShadow: [
                       '0 4px 6px rgba(0,0,0,0.1)',
@@ -217,7 +216,7 @@ export default function Process() {
                   transition={{
                     duration: 3,
                     repeat: Infinity,
-                    ease: "easeInOut",
+                    ease: 'easeInOut' as const,
                   }}
                 >
                   <motion.div

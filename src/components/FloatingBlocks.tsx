@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from '../lib/framer-motion';
-import { Code2, PenTool, TrendingUp, MapPin, Users, Sparkles } from 'lucide-react';
+import { Code2, PenTool, TrendingUp, MapPin, Users } from 'lucide-react';
 
 // Couleurs de la palette
 const COLORS = {
@@ -195,10 +195,10 @@ export default function FloatingBlocks() {
   }, [blocks, cellWidth, cellHeight, gridSize, spacing]);
 
   return (
-    <div 
-      className="relative w-full h-full mx-auto"
-      style={{ 
-        width: containerWidth, 
+    <div
+      className="relative mx-auto overflow-hidden"
+      style={{
+        width: containerWidth,
         height: containerHeight,
         maxWidth: '100%',
         maxHeight: '100%',

@@ -108,7 +108,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center rounded-lg border border-secondary/20 bg-background p-1.5 text-text transition-all duration-300 hover:bg-primary/10"
+              className="flex items-center justify-center rounded-lg border border-secondary/20 bg-background p-1.5 min-h-[44px] min-w-[44px] text-text transition-all duration-300 hover:bg-primary/10"
               aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

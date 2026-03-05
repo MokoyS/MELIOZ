@@ -1,6 +1,6 @@
 import { motion } from '../lib/framer-motion';
 import { scrollToSection } from '../lib/scroll';
-import { baseViewport, baseTransition, slowTransition, fadeInUp, scaleIn } from '../lib/motion';
+import { baseViewport, baseTransition, fadeInUp, scaleIn } from '../lib/motion';
 
 export default function Portfolio() {
   const viewport = baseViewport;

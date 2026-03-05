@@ -6,16 +6,14 @@ import SEO from '../components/SEO';
 
 export default function BookACall() {
   const [showCalendar, setShowCalendar] = useState(false);
-  const [tallyFormSubmitted, setTallyFormSubmitted] = useState(false);
 
   // Vérifier si le formulaire Tally a été soumis (via localStorage ou paramètre URL)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const tallySubmitted = params.get('tally_submitted') === 'true' || 
+    const tallySubmitted = params.get('tally_submitted') === 'true' ||
                           localStorage.getItem('tally_submitted') === 'true';
-    
+
     if (tallySubmitted) {
-      setTallyFormSubmitted(true);
       setShowCalendar(true);
     }
   }, []);
@@ -30,7 +28,6 @@ export default function BookACall() {
         (event.data && event.data.type === 'tally:form:submitted') ||
         (event.origin.includes('tally.so') && event.data?.event === 'tallyFormSubmitted')
       ) {
-        setTallyFormSubmitted(true);
         setShowCalendar(true);
         localStorage.setItem('tally_submitted', 'true');
       }
@@ -101,7 +98,6 @@ export default function BookACall() {
                     // Vérifier si le formulaire a déjà été soumis (via paramètre URL)
                     const urlParams = new URLSearchParams(window.location.search);
                     if (urlParams.get('submitted') === 'true' || urlParams.get('tally_submitted') === 'true') {
-                      setTallyFormSubmitted(true);
                       setShowCalendar(true);
                       localStorage.setItem('tally_submitted', 'true');
                     }
