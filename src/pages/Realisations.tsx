@@ -53,7 +53,7 @@ export default function Realisations() {
     <div className="min-h-screen bg-background text-text">
       <SEO
         title="Nos Réalisations & Projets Web | MELIOZ Agence Paris"
-        description="Explorez nos projets et études de cas. Des solutions digitales innovantes conçues par l'agence MELIOZ."
+        description="Explorez nos projets : sites vitrines, e-commerce, applications web et design UI/UX. Des solutions digitales innovantes conçues par l'agence MELIOZ à Paris."
         canonical="/realisations"
       />
       <Navbar />

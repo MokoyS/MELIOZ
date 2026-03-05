@@ -43,8 +43,8 @@ export default function BookACall() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO 
-        title="MELIOZ - Réserver un appel"
-        description="Discutons de votre vision digitale. Réservez un appel de 15 minutes avec l'équipe MELIOZ pour échanger sur votre projet."
+        title="Réserver un appel avec MELIOZ — Agence Digitale Paris"
+        description="Réservez un appel de 30 minutes avec l'équipe MELIOZ. Discutez de votre projet digital, de vos besoins et obtenez des conseils personnalisés."
         canonical="/book-a-call"
       />
       <Navbar />

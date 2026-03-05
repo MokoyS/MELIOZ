@@ -7,13 +7,15 @@ import WhyUs from './components/WhyUs';
 import ContactPreFooter from './components/ContactPreFooter';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
+import { useLenis } from './hooks/useLenis';
 
 function App() {
+  useLenis();
   return (
     <div className="min-h-screen bg-background text-text overflow-x-hidden relative">
       <SEO
-        title="MELIOZ - Agence Digitale"
-        description="Chez Melioz, nous croyons que chaque entreprise mérite une présence digitale à la hauteur de ses ambitions. Notre équipe d'experts combine créativité, expertise technique et vision stratégique pour transformer vos idées en réalité."
+        title="MELIOZ — Agence Digitale Paris | Design, Dev & Stratégie"
+        description="Agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit. MELIOZ transforme vos ambitions en présence digitale remarquable."
         canonical="/"
       />
       {/* Effets d'ambiance subtils avec la nouvelle palette */}

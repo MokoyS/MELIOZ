@@ -91,8 +91,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SEO 
-        title="MELIOZ - Contact"
-        description="Contactez l'agence MELIOZ, agence digitale 100% en ligne basée à Paris, pour échanger sur vos besoins et concrétiser vos projets digitaux dès aujourd'hui."
+        title="Contactez MELIOZ — Agence Digitale Paris | Devis Gratuit"
+        description="Parlons de votre projet digital. Contactez l'équipe MELIOZ à Paris pour un devis gratuit ou une consultation. Réponse sous 24h garanti."
         canonical="/contact"
       />
       <Navbar />

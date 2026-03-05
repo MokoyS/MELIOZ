@@ -7,7 +7,7 @@ export default function ConditionsGenerales() {
     <div className="min-h-screen bg-background text-text">
       <SEO 
         title="MELIOZ - Conditions Générales"
-        description="Conditions générales d'utilisation et de vente de l'agence MELIOZ. Découvrez les modalités de paiement, les conditions de transfert de propriété et les règles d'utilisation du site."
+        description="Conditions générales d'utilisation et de vente de l'agence MELIOZ. Modalités de paiement, transfert de propriété et règles d'utilisation du site agencemelioz.com."
         canonical="/conditions-generales"
       />
       <Navbar />
