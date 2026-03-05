@@ -28,13 +28,15 @@ function App() {
       </div>
 
       <Navbar />
-      <Hero />
-      <ServicesPreview />
-      <AboutSection />
-      <CTADevis />
-      <WhyUs />
-      {/* <ClientsLogos /> */}
-      <ContactPreFooter />
+      <main id="main-content">
+        <Hero />
+        <ServicesPreview />
+        <AboutSection />
+        <CTADevis />
+        <WhyUs />
+        {/* <ClientsLogos /> */}
+        <ContactPreFooter />
+      </main>
       <Footer />
     </div>
   );

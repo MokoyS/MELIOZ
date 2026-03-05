@@ -122,11 +122,13 @@ export default function Contact() {
                     type="text"
                     id="name"
                     {...register('name')}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    aria-invalid={errors.name ? 'true' : undefined}
                     className="w-full px-4 py-3 bg-background border border-secondary/20 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors font-sans"
                     placeholder="Jean Dupont"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-sm text-accent font-sans">{errors.name.message}</p>
+                    <p id="name-error" role="alert" className="mt-1 text-sm text-accent font-sans">{errors.name.message}</p>
                   )}
                 </div>
 
@@ -138,11 +140,13 @@ export default function Contact() {
                     type="email"
                     id="email"
                     {...register('email')}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    aria-invalid={errors.email ? 'true' : undefined}
                     className="w-full px-4 py-3 bg-background border border-secondary/20 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors font-sans"
                     placeholder="jean@entreprise.fr"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-accent font-sans">{errors.email.message}</p>
+                    <p id="email-error" role="alert" className="mt-1 text-sm text-accent font-sans">{errors.email.message}</p>
                   )}
                 </div>
 
@@ -167,11 +171,13 @@ export default function Contact() {
                     id="message"
                     rows={5}
                     {...register('message')}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
+                    aria-invalid={errors.message ? 'true' : undefined}
                     className="w-full px-4 py-3 bg-background border border-secondary/20 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors resize-none font-sans"
                     placeholder="Décrivez votre projet ou votre demande..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-accent font-sans">{errors.message.message}</p>
+                    <p id="message-error" role="alert" className="mt-1 text-sm text-accent font-sans">{errors.message.message}</p>
                   )}
                 </div>
 

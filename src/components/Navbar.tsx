@@ -69,10 +69,10 @@ export default function Navbar() {
         layout
         className={`relative z-50 w-full max-w-6xl rounded-2xl sm:rounded-[28px] border transition-all duration-300 pointer-events-auto ${containerClasses}`}
       >
-        <nav className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3">
+        <nav aria-label="Navigation principale" className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3">
           {/* Logo */}
           <div className="flex flex-1 items-center">
-            <a href="/" className="flex items-center gap-1.5 sm:gap-2">
+            <a href="/" className="flex items-center gap-1.5 sm:gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">
               <div className="px-1.5 sm:px-2">
                 <Logo className="h-6 w-auto sm:h-7" />
               </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-text/70 hover:text-text transition-colors"
+                className="text-text/70 hover:text-text transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
               >
                 {link.label}
               </a>
@@ -96,7 +96,7 @@ export default function Navbar() {
           <div className="hidden md:flex flex-1 items-center justify-end gap-3">
             <a
               href="/book-a-call"
-              className="px-5 py-2 bg-primary text-white text-sm font-bold rounded-full shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-opacity-90"
+              className="px-5 py-2 bg-primary text-white text-sm font-bold rounded-full shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               Réserver un appel
             </a>
@@ -108,8 +108,10 @@ export default function Navbar() {
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center rounded-lg border border-secondary/20 bg-background p-1.5 min-h-[44px] min-w-[44px] text-text transition-all duration-300 hover:bg-primary/10"
-              aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              className="flex items-center justify-center rounded-lg border border-secondary/20 bg-background p-1.5 min-h-[44px] min-w-[44px] text-text transition-all duration-300 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label={isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </motion.button>
@@ -132,6 +134,7 @@ export default function Navbar() {
             />
             <motion.div
               key="menu"
+              id="mobile-menu"
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -143,7 +146,7 @@ export default function Navbar() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="rounded-lg px-4 py-3 text-left text-sm font-medium text-text hover:bg-primary/10"
+                    className="rounded-lg px-4 py-3 text-left text-sm font-medium text-text hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -152,7 +155,7 @@ export default function Navbar() {
               </div>
               <a
                 href="/book-a-call"
-                className="mt-5 w-full rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90 shadow-md block"
+                className="mt-5 w-full rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90 shadow-md block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Réserver un appel

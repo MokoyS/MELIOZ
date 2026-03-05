@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Linkedin, href: '#' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn de MELIOZ' },
   ];
 
   const navigationLinks = [
@@ -32,15 +32,15 @@ export default function Footer() {
               <Logo className="h-7 sm:h-8 w-auto" inverted />
             </div>
             <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 max-w-md">
-              Agence digitale 100% en ligne, basée à Paris. Spécialisée dans la création de sites web sur-mesure pour TPE et PME. 
-              Design, développement et stratégie digitale.
+              MELIOZ crée des sites web rapides, modernes et sur-mesure. Une expertise digitale sérieuse, un suivi humain du début à la fin.
             </p>
             <div className="flex gap-2 sm:gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="p-2 bg-white/10 border border-white/10 rounded-lg hover:bg-white/20 hover:border-primary transition-all duration-300"
+                  aria-label={social.label}
+                  className="p-2 bg-white/10 border border-white/10 rounded-lg hover:bg-white/20 hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-text"
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 hover:text-primary" />
                 </a>
