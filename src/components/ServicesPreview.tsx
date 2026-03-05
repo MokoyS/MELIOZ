@@ -1,34 +1,32 @@
-import { ArrowRight, Rocket, PenTool, TrendingUp, Code2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { BorderBeam } from '@/components/magicui/border-beam';
 
 export default function ServicesPreview() {
   const services = [
     {
-      icon: Code2,
       title: 'Ingénierie & Developpement',
-      description: 'Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l’évolutivité. Une infrastructure solide pour soutenir votre croissance.',
-      color: 'text-primary',
-      bgColor: 'bg-primary/10',
+      description: "Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l'évolutivité. Une infrastructure solide pour soutenir votre croissance.",
+      barColor: 'bg-primary',
+      featured: true,
     },
     {
-      icon: PenTool,
       title: 'Expérience & Identité Visuelle',
-      description: "Des interfaces haute couture, qui captent l’attention et renforcent votre autorité. Nous concevons des parcours utilisateurs fluides dédiés à l'engagement.",
-      color: 'text-secondary',
-      bgColor: 'bg-secondary/10',
+      description: "Des interfaces haute couture, qui captent l'attention et renforcent votre autorité. Nous concevons des parcours utilisateurs fluides dédiés à l'engagement.",
+      barColor: 'bg-secondary',
+      featured: false,
     },
     {
-      icon: TrendingUp,
       title: 'Visibilité & Acquisition',
       description: "SEO,GEO & SEA. Nous pilotons vos leviers d'acquisition et assurons un suivi analytique rigoureux pour optimiser continuellement vos performances.",
-      color: 'text-accent',
-      bgColor: 'bg-accent/10',
+      barColor: 'bg-accent',
+      featured: false,
     },
     {
-      icon: Rocket,
       title: 'Partenariat & Évolution',
       description: "Le web ne s'arrête pas après le lancement. Nous vous formons et vous conseillons en continu pour que votre site reste un actif performant dans le temps.",
-      color: 'text-primary',
-      bgColor: 'bg-primary/10',
+      barColor: 'bg-primary',
+      featured: false,
     },
   ];
 
@@ -49,15 +47,30 @@ export default function ServicesPreview() {
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 mb-8 sm:mb-12">
           {services.map((service) => (
-            <div
-              key={service.title}
-              className="p-5 sm:p-6 bg-background rounded-xl sm:rounded-2xl border border-secondary/20 shadow-soft hover:shadow-md hover:border-secondary/40 transition-all duration-300"
-            >
-              <div className={`inline-flex p-2.5 sm:p-3 rounded-lg sm:rounded-xl ${service.bgColor} mb-3 sm:mb-4`}>
-                <service.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${service.color}`} />
-              </div>
-              <h3 className="text-base sm:text-lg font-semibold text-text mb-2">{service.title}</h3>
-              <p className="text-xs sm:text-sm text-text/70 leading-relaxed">{service.description}</p>
+            <div key={service.title} className="relative group">
+              <MagicCard
+                className="p-5 sm:p-6 h-full bg-background border border-secondary/20 cursor-pointer"
+                gradientColor="#B2C2A2"
+                gradientOpacity={0.15}
+              >
+                <div className="flex flex-col h-full">
+                  <div className={`w-8 h-1 ${service.barColor} rounded-full mb-4`} />
+                  <h3 className="font-display font-bold text-base sm:text-lg mb-2 text-text">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-secondary flex-1 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </MagicCard>
+              {service.featured && (
+                <BorderBeam
+                  size={180}
+                  duration={12}
+                  colorFrom="#B2C2A2"
+                  colorTo="#E5A186"
+                />
+              )}
             </div>
           ))}
         </div>

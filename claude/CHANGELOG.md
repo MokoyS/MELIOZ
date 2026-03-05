@@ -10,6 +10,23 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### feat — Remplacement icônes génériques par MagicCard + BorderBeam (Task 6) — 2026-03-05
+
+- refactor: `ServicesPreview.tsx` — suppression des icônes Lucide décoratives (Code2, PenTool, TrendingUp, Rocket) et de leurs champs `icon`, `color`, `bgColor` dans le tableau `services`
+- feat: `ServicesPreview.tsx` — chaque carte de service enveloppée dans `MagicCard` (effet radial lumière au survol, `gradientColor="#B2C2A2"`, `gradientOpacity=0.15`) et dans un `div.relative.group`
+- feat: `ServicesPreview.tsx` — indicateur barre colorée `w-8 h-1 rounded-full` remplace visuellement les icônes (couleurs `bg-primary`, `bg-secondary`, `bg-accent` selon le service)
+- feat: `ServicesPreview.tsx` — `BorderBeam` (size=180, duration=12, palette MELIOZ) positionné sur la première carte (`featured: true`) pour l'effet premium
+- style: `ServicesPreview.tsx` — texte description passe de `text-text/70` à `text-secondary` pour harmonisation palette
+- refactor: `WhyUs.tsx` — suppression des icônes Lucide décoratives (Zap, Users, Shield) et de leurs champs `icon`, `color`, `bgColor` dans le tableau `reasons`
+- feat: `WhyUs.tsx` — chaque carte avantage enveloppée dans `MagicCard` (`gradientColor="#B2C2A2"`, `gradientOpacity=0.12`, `cursor-default`)
+- feat: `WhyUs.tsx` — indicateur barre colorée `w-8 h-1 rounded-full` remplace les icônes (couleurs `bg-primary`, `bg-secondary`, `bg-accent`)
+- feat: `WhyUs.tsx` — `BorderBeam` (size=150, duration=20, palette MELIOZ) sur toutes les cartes pour cohérence premium de la section
+- style: `WhyUs.tsx` — texte description passe de `text-text/70` à `text-secondary` pour harmonisation palette
+- fix: apostrophes typographiques dans les descriptions corrigées (guillemets doubles utilisés pour délimiter les strings contenant `'`)
+- Aucune régression TypeScript : 21 erreurs préexistantes inchangées, zéro nouvelle erreur sur les fichiers modifiés
+
+---
+
 ### feat — Hero amélioré avec AnimatedGradientText + BlurFade (Task 5) — 2026-03-05
 
 - feat: `AnimatedGradientText` appliqué sur "une présence en ligne" (ligne centrale du H1) — remplace la couleur fixe `text-primary` par le dégradé animé sauge → lichen → terre cuite
