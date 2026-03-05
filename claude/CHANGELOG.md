@@ -10,6 +10,22 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### feat — Installation Magic UI (Task 4) — 2026-03-05
+
+- feat: créé `src/components/magicui/` avec 5 composants Magic UI
+- feat: `magic-card.tsx` — carte avec effet radial de lumière au survol (suivi souris)
+- feat: `animated-gradient-text.tsx` — texte avec dégradé animé palette MELIOZ (sauge → lichen → terre cuite)
+- feat: `border-beam.tsx` — bordure lumineuse animée en conic-gradient (palette MELIOZ)
+- feat: `number-ticker.tsx` — compteur animé avec spring Framer Motion, format fr-FR
+- feat: `blur-fade.tsx` — apparition avec blur au scroll via useInView Framer Motion
+- style: `tailwind.config.js` — ajout keyframes `gradient` et `border-beam` + animations correspondantes
+- style: `src/index.css` — ajout `@keyframes gradient` CSS natif pour `animate-gradient`
+- fix: paramètres `gradientFrom`/`gradientTo` retirés de la déstructuration de MagicCard (déclarés dans l'interface mais inutilisés dans le rendu, élimine 2 erreurs TS6133)
+- Zéro nouvelle erreur TypeScript introduite (21 erreurs préexistantes inchangées)
+- Build production : 1.45s, aucune erreur
+
+---
+
 ### feat — Installation shadcn/ui (Task 3) — 2026-03-05
 
 - feat: alias `@` configuré dans vite.config.ts et tsconfig.app.json

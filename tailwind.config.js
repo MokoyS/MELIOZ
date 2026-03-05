@@ -27,7 +27,23 @@ export default {
       },
       boxShadow: {
         'soft': '0 10px 40px -10px rgba(47, 54, 44, 0.08)',
-      }
+      },
+      animation: {
+        gradient: 'gradient 8s linear infinite',
+        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+      },
+      keyframes: {
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'border-beam': {
+          '100%': {
+            'offset-distance': '100%',
+          },
+        },
+      },
     },
   },
   plugins: [],
