@@ -23,7 +23,7 @@ export default function SocialProof() {
     },
     {
       name: 'Tailwind CSS',
-      logo: '/images/logos-tech/tailwind-logo.png',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
       description: 'Classes utilitaires pour un design sur mesure et responsive.',
     },
     {
@@ -33,7 +33,7 @@ export default function SocialProof() {
     },
     {
       name: 'Framer Motion',
-      logo: '/images/logos-tech/fm-logo.svg',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg',
       description: 'Animations fluides et interactions immersives pour vos pages.',
     },
   ];
@@ -115,6 +115,8 @@ export default function SocialProof() {
                 <OptimizedImage
                   src={tech.logo}
                   alt={`Logo ${tech.name}`}
+                  width={48}
+                  height={48}
                   className="h-12 w-12 object-contain mb-3"
                 />
               </motion.div>

@@ -1,36 +1,38 @@
 /**
  * Composant Image optimisé avec lazy loading automatique
  * Utilise loading="lazy" par défaut sauf si l'image est au-dessus de la ligne de flottaison (LCP)
+ * width et height sont obligatoires pour éviter le Cumulative Layout Shift (CLS)
  */
-import { ImgHTMLAttributes } from 'react';
 
-interface OptimizedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface OptimizedImageProps {
   src: string;
   alt: string;
-  priority?: boolean; // Si true, l'image est considérée comme LCP et ne sera pas lazy loaded
+  width: number;   // obligatoire pour éviter le CLS
+  height: number;  // obligatoire pour éviter le CLS
   className?: string;
+  priority?: boolean; // Si true, l'image est considérée comme LCP et ne sera pas lazy loaded
+  style?: React.CSSProperties;
 }
 
 export default function OptimizedImage({
   src,
   alt,
-  priority = false,
+  width,
+  height,
   className = '',
-  loading,
-  ...props
+  priority = false,
+  style,
 }: OptimizedImageProps) {
-  // Si priority est true, on charge immédiatement (pour LCP)
-  // Sinon, on utilise lazy loading
-  const loadingMode = loading || (priority ? 'eager' : 'lazy');
-
   return (
     <img
       src={src}
       alt={alt}
-      loading={loadingMode}
+      width={width}
+      height={height}
+      loading={priority ? 'eager' : 'lazy'}
       decoding="async"
       className={className}
-      {...props}
+      style={style}
     />
   );
 }

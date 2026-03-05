@@ -10,6 +10,20 @@ Catégories : `feat` (nouvelle fonctionnalité), `fix` (correction), `perf` (per
 
 ## [En cours] — Refonte MELIOZ
 
+### fix — Optimisation des images — width/height obligatoires, lazy loading, WebP (Task 9) — 2026-03-05
+
+- refactor: `OptimizedImage.tsx` — interface remaniée : `width` et `height` deviennent des props obligatoires typées `number` (plus `extends ImgHTMLAttributes` — trop permissif). `decoding="async"` conservé. Props `style` et `className` explicites. Le spread `...props` est retiré pour forcer la discipline des attributs image.
+- fix: `SocialProof.tsx` — ajout de `width={48}` et `height={48}` sur le seul usage de `<OptimizedImage>` (logo tech 48×48 px correspondant aux classes Tailwind `h-12 w-12`)
+- fix: `SocialProof.tsx` — remplacement de `/images/logos-tech/tailwind-logo.png` (fichier local inexistant) par `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg`
+- fix: `SocialProof.tsx` — remplacement de `/images/logos-tech/fm-logo.svg` (fichier local inexistant) par `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg`
+- audit: `Portfolio.tsx` — aucune balise `<img>` ni `<OptimizedImage>` présente (section "En coulisses" sans image de projet) — aucune modification nécessaire
+- audit: `Hero.tsx` — balise `<img>` native (favicon.svg) déjà corrigée en Task 2 (loading="lazy", width=20, height=20, alt descriptif) — non touchée
+- note: les logos CDN jsdelivr/devicons sont des SVG (format vectoriel, pas de conversion WebP possible pour des SVG) — les 4 autres logos étaient déjà sur ce même CDN
+- note: aucune image importée localement via `import` détectée dans les composants analysés
+- typecheck: zéro nouvelle erreur TypeScript introduite sur les fichiers modifiés (erreurs préexistantes BentoAbout.tsx inchangées)
+
+---
+
 ### feat — Animations scroll BlurFade sur sections principales (Task 8) — 2026-03-05
 
 - audit: `BentoAbout.tsx` — déjà animé via `motion.div` avec `whileInView="visible"` et `viewport={{ once: true }}` — aucune modification
