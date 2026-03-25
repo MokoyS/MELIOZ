@@ -3,7 +3,7 @@ import { BlurFade } from '@/components/magicui/blur-fade';
 
 export default function CTADevis() {
   return (
-    <section id="appel" className="py-12 sm:py-16 md:py-20 bg-primary/5 border-y border-secondary/20">
+    <section id="appel" className="py-12 sm:py-16 md:py-20 bg-white border-y border-secondary/20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <BlurFade delay={0.1} inView>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-3 sm:mb-4 px-2">

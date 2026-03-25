@@ -11,7 +11,7 @@ export default function BookACall() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const tallySubmitted = params.get('tally_submitted') === 'true' ||
-                          localStorage.getItem('tally_submitted') === 'true';
+      localStorage.getItem('tally_submitted') === 'true';
 
     if (tallySubmitted) {
       setShowCalendar(true);
@@ -39,7 +39,7 @@ export default function BookACall() {
 
   return (
     <div className="min-h-screen bg-background text-text">
-      <SEO 
+      <SEO
         title="Réserver un appel avec MELIOZ — Agence Digitale Paris"
         description="Réservez un appel de 30 minutes avec l'équipe MELIOZ. Discutez de votre projet digital, de vos besoins et obtenez des conseils personnalisés."
         canonical="/book-a-call"
@@ -88,7 +88,7 @@ export default function BookACall() {
                   marginHeight={0}
                   marginWidth={0}
                   title="Formulaire de qualification"
-                  style={{ 
+                  style={{
                     border: 'none',
                     display: 'block',
                     overflow: 'hidden'

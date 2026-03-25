@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { ArrowRight, Mail, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+import { ArrowRight, Mail, CheckCircle, Loader2, Clock, Zap, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -90,7 +90,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background text-text">
-      <SEO 
+      <SEO
         title="Contactez MELIOZ — Agence Digitale Paris | Devis Gratuit"
         description="Parlons de votre projet digital. Contactez l'équipe MELIOZ à Paris pour un devis gratuit ou une consultation. Réponse sous 24h garanti."
         canonical="/contact"
@@ -125,7 +125,7 @@ export default function Contact() {
                     aria-describedby={errors.name ? 'name-error' : undefined}
                     aria-invalid={errors.name ? 'true' : undefined}
                     className="w-full px-4 py-3 bg-background border border-secondary/20 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors font-sans"
-                    placeholder="Jean Dupont"
+                    placeholder="Agence Melioz"
                   />
                   {errors.name && (
                     <p id="name-error" role="alert" className="mt-1 text-sm text-accent font-sans">{errors.name.message}</p>
@@ -143,7 +143,7 @@ export default function Contact() {
                     aria-describedby={errors.email ? 'email-error' : undefined}
                     aria-invalid={errors.email ? 'true' : undefined}
                     className="w-full px-4 py-3 bg-background border border-secondary/20 rounded-[24px] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors font-sans"
-                    placeholder="jean@entreprise.fr"
+                    placeholder="contact@agencemelioz.com"
                   />
                   {errors.email && (
                     <p id="email-error" role="alert" className="mt-1 text-sm text-accent font-sans">{errors.email.message}</p>
@@ -224,42 +224,55 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Composant Paris */}
-              <div className="p-8 bg-text rounded-[24px] text-white">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-white/10 rounded-xl">
-                    <MapPin className="w-6 h-6 text-primary" />
+              {/* Panneau visuel — promesses */}
+              <div className="relative p-8 bg-background border border-secondary/20 rounded-[24px] overflow-hidden">
+
+                {/* Blobs ambient */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/15 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+                  <span className="text-sm font-semibold text-secondary uppercase tracking-widest font-sans">Melioz — disponible</span>
+                </div>
+
+                {/* Indicateurs */}
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-2xl border border-primary/15">
+                    <div className="p-2.5 bg-primary/15 rounded-xl flex-shrink-0">
+                      <Clock className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-base font-bold font-display text-text">Réponse sous 24h</div>
+                      <div className="text-text/50 text-xs font-sans">Garanti en semaine</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold font-display">Paris, France</h3>
-                    <p className="text-white/60 text-sm font-sans">Notre terrain de jeu</p>
+                  <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-2xl border border-accent/15">
+                    <div className="p-2.5 bg-accent/15 rounded-xl flex-shrink-0">
+                      <Zap className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <div className="text-base font-bold font-display text-text">Premier RDV offert</div>
+                      <div className="text-text/50 text-xs font-sans">30 min pour parler de votre projet</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-secondary/5 rounded-2xl border border-secondary/15">
+                    <div className="p-2.5 bg-secondary/15 rounded-xl flex-shrink-0">
+                      <MessageCircle className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div>
+                      <div className="text-base font-bold font-display text-text">Collaboration 100% en ligne</div>
+                      <div className="text-text/50 text-xs font-sans">Visio, outils partagés, suivi en temps réel</div>
+                    </div>
                   </div>
                 </div>
-                
-                {/* Représentation stylisée de Paris */}
-                <div className="relative h-32 flex items-end justify-center gap-2 mb-6">
-                  {/* Tour Eiffel stylisée */}
-                  <div className="relative">
-                    <div className="w-1 h-20 bg-primary/40 mx-auto" />
-                    <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary/40" />
-                    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-12 h-1 bg-primary/40" />
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-16 h-1 bg-primary/40" />
-                    <div className="w-20 h-2 bg-primary/40 rounded-t-full" />
-                  </div>
-                  
-                  {/* Bâtiments stylisés */}
-                  <div className="flex items-end gap-1">
-                    <div className="w-6 h-12 bg-secondary/30 rounded-t" />
-                    <div className="w-4 h-16 bg-secondary/40 rounded-t" />
-                    <div className="w-5 h-10 bg-secondary/30 rounded-t" />
-                    <div className="w-6 h-14 bg-secondary/40 rounded-t" />
-                    <div className="w-4 h-8 bg-secondary/30 rounded-t" />
-                  </div>
+
+                {/* Signature */}
+                <div className="pt-6 border-t border-secondary/20 flex items-center justify-between">
+                  <div className="text-xl font-bold font-display tracking-tight text-text">MELIOZ</div>
+                  <div className="text-xs text-text/40 font-sans">Paris, France</div>
                 </div>
-                
-                <p className="text-white/70 text-sm font-sans">
-                  Agence 100% digitale basée à Paris. Nous travaillons avec des clients partout en France via visioconférence et outils collaboratifs.
-                </p>
               </div>
             </div>
           </div>

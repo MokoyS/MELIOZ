@@ -8,7 +8,7 @@ export default function ServicesPreview() {
       title: 'Ingénierie & Developpement',
       description: "Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l'évolutivité. Une infrastructure solide pour soutenir votre croissance.",
       barColor: 'bg-primary',
-      featured: true,
+      featured: false,
     },
     {
       title: 'Expérience & Identité Visuelle',
@@ -31,7 +31,7 @@ export default function ServicesPreview() {
   ];
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-24 bg-background">
+    <section id="services" className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-xs sm:text-sm mb-3 sm:mb-4">
