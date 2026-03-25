@@ -1,63 +1,50 @@
-import { Linkedin, Mail } from 'lucide-react';
-import Logo from './Logo';
+import { Linkedin, Instagram, Github, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn de MELIOZ' },
-  ];
-
-  const navigationLinks = [
+  const navLinks = [
     { label: 'Services', href: '/services' },
     { label: 'Agence', href: '/agence' },
     { label: 'Expertise', href: '/expertise' },
     { label: 'Réalisations', href: '/realisations' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Réserver un appel', href: '/book-a-call' },
   ];
 
   const legalLinks = [
     { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/privacy' },
-    { label: 'Conditions générales', href: '/conditions-generales' },
-    { label: 'Plan du site', href: '/plan-du-site' },
+    { label: 'Confidentialité', href: '/privacy' },
+    { label: 'CGU', href: '/conditions-generales' },
   ];
 
   return (
-    <footer className="bg-text border-t border-secondary/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
-        <div className="grid gap-8 sm:gap-10 md:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-8 sm:mb-10 md:mb-12">
-          {/* Logo et description */}
-          <div className="sm:col-span-2">
-            <div className="mb-3 sm:mb-4">
-              <Logo className="h-7 sm:h-8 w-auto" inverted />
-            </div>
-            <p className="text-sm sm:text-base text-white/70 mb-4 sm:mb-6 max-w-md">
-              MELIOZ crée des sites web rapides, modernes et sur-mesure. Une expertise digitale sérieuse, un suivi humain du début à la fin.
+    <footer className="relative bg-melioz-navy overflow-hidden">
+      {/* M watermark */}
+      <img
+        src="/images/Melioz Vector.svg"
+        className="absolute bottom-0 left-0 w-96 opacity-[0.03] pointer-events-none select-none"
+        aria-hidden="true"
+        style={{ filter: 'brightness(0) invert(1)' }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Col 1 — Marque */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <a href="/" className="flex items-center gap-2 mb-4">
+              <img src="/images/Melioz Vector.svg" className="h-12 w-auto" alt="Melioz" style={{ filter: 'brightness(0) invert(1)' }} />
+              <span className="font-display font-bold text-xl text-melioz-offwhite">melioz</span>
+            </a>
+            <p className="font-body text-sm text-melioz-offwhite/50 leading-relaxed max-w-xs">
+              Agence digitale à taille humaine. Design, développement et stratégie pour les entreprises ambitieuses.
             </p>
-            <div className="flex gap-2 sm:gap-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="p-2 bg-white/10 border border-white/10 rounded-lg hover:bg-white/20 hover:border-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-text"
-                >
-                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 hover:text-primary" />
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Navigation */}
+          {/* Col 2 — Navigation */}
           <div>
-            <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Navigation</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {navigationLinks.map((link) => (
+            <p className="font-body text-[11px] uppercase tracking-widest text-melioz-electric mb-4">Navigation</p>
+            <ul className="space-y-2">
+              {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm sm:text-base text-white/70 hover:text-primary transition-colors"
-                  >
+                  <a href={link.href} className="font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
                     {link.label}
                   </a>
                 </li>
@@ -65,37 +52,55 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Col 3 — Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li className="flex items-center gap-2 text-white/70">
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-                <a href="mailto:contact@agencemelioz.com" className="text-sm sm:text-base hover:text-primary transition-colors break-all">
+            <p className="font-body text-[11px] uppercase tracking-widest text-melioz-electric mb-4">Contact</p>
+            <ul className="space-y-2">
+              <li>
+                <a href="mailto:contact@agencemelioz.com" className="flex items-center gap-2 font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
                   contact@agencemelioz.com
+                </a>
+              </li>
+              <li>
+                <a href="/book-a-call" className="font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
+                  Réserver un appel
                 </a>
               </li>
             </ul>
           </div>
-        </div>
 
-        {/* Bas de page */}
-        <div className="pt-6 sm:pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-            <p className="text-white/50 text-xs sm:text-sm text-center sm:text-left">
-              © 2026 Melioz. Tous droits réservés.
-            </p>
-            <div className="flex flex-wrap gap-4 sm:gap-6 justify-center sm:justify-end text-xs sm:text-sm">
-              {legalLinks.map((link) => (
+          {/* Col 4 — Réseaux */}
+          <div>
+            <p className="font-body text-[11px] uppercase tracking-widest text-melioz-electric mb-4">Réseaux</p>
+            <div className="flex gap-3">
+              {[
+                { icon: Linkedin, href: '#', label: 'LinkedIn MELIOZ' },
+                { icon: Instagram, href: '#', label: 'Instagram MELIOZ' },
+                { icon: Github, href: '#', label: 'GitHub MELIOZ' },
+              ].map(({ icon: Icon, href, label }) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-white/50 hover:text-primary transition-colors"
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="p-2 rounded-lg border border-melioz-offwhite/10 text-melioz-offwhite/50 hover:text-melioz-offwhite hover:border-melioz-offwhite/30 transition-colors duration-200"
                 >
-                  {link.label}
+                  <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="pt-8 border-t border-melioz-offwhite/10 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="font-body text-xs text-melioz-offwhite/30">© 2026 Melioz. Tous droits réservés.</p>
+          <div className="flex gap-4">
+            {legalLinks.map((link) => (
+              <a key={link.label} href={link.href} className="font-body text-xs text-melioz-offwhite/30 hover:text-melioz-offwhite/60 transition-colors">
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
