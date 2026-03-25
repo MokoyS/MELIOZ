@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Github, Mail } from 'lucide-react';
+import { Linkedin, Camera, Code2, Mail } from 'lucide-react';
 
 export default function Footer() {
   const navLinks = [
@@ -76,8 +76,8 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: Linkedin, href: '#', label: 'LinkedIn MELIOZ' },
-                { icon: Instagram, href: '#', label: 'Instagram MELIOZ' },
-                { icon: Github, href: '#', label: 'GitHub MELIOZ' },
+                { icon: Camera, href: '#', label: 'Instagram MELIOZ' },
+                { icon: Code2, href: '#', label: 'GitHub MELIOZ' },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
