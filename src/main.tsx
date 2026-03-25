@@ -15,7 +15,6 @@ if (isDev) {
   // Vite va les précharger automatiquement
   const [
     { default: App },
-    { default: Admin },
     { default: Services },
     { default: Agence },
     { default: Expertise },
@@ -29,7 +28,6 @@ if (isDev) {
     { default: CookieBanner },
   ] = await Promise.all([
     import('./App.tsx'),
-    import('./pages/Admin.tsx'),
     import('./pages/Services.tsx'),
     import('./pages/Agence.tsx'),
     import('./pages/Expertise.tsx'),
@@ -48,8 +46,6 @@ if (isDev) {
 
   const getComponent = () => {
     switch (currentPath) {
-      case '/admin':
-        return <Admin />;
       case '/services':
         return <Services />;
       case '/agence':
@@ -88,7 +84,6 @@ if (isDev) {
 } else {
   // Production : lazy loading pour optimiser le bundle
   const App = lazy(() => import('./App.tsx'));
-  const Admin = lazy(() => import('./pages/Admin.tsx'));
   const Services = lazy(() => import('./pages/Services.tsx'));
   const Agence = lazy(() => import('./pages/Agence.tsx'));
   const Expertise = lazy(() => import('./pages/Expertise.tsx'));
@@ -106,8 +101,6 @@ if (isDev) {
 
   const getComponent = () => {
     switch (currentPath) {
-      case '/admin':
-        return <Admin />;
       case '/services':
         return <Services />;
       case '/agence':
