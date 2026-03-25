@@ -1,6 +1,5 @@
 /* @import DOIT être avant @tailwind — requis par CSS spec */
-@import '@fontsource/space-grotesk/700.css';
-@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource-variable/space-grotesk';
 @import '@fontsource/dm-sans/400.css';
 @import '@fontsource/dm-sans/500.css';
 
@@ -23,6 +22,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk Variable', sans-serif;
   @apply font-bold text-melioz-navy;
 }

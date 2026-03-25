@@ -14,7 +14,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Space Grotesk', 'sans-serif'],
+        display: ['Space Grotesk Variable', 'sans-serif'],
         body:    ['DM Sans', 'sans-serif'],
       },
       animation: {
