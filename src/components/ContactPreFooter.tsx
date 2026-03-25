@@ -1,85 +1,64 @@
 import { ArrowRight, Clock, Zap, MessageCircle } from 'lucide-react';
-import { BlurFade } from '@/components/magicui/blur-fade';
+import AnimatedSection from './AnimatedSection';
 
 export default function ContactPreFooter() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-white border-t border-secondary/20">
+    <section className="py-32 bg-melioz-lavender/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 items-center">
-          <div className="order-2 lg:order-1">
-            <BlurFade delay={0.1} inView>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-4 sm:mb-6">
-                Contactez-nous dès aujourd'hui
-              </h2>
-            </BlurFade>
-            <BlurFade delay={0.25} inView>
-              <p className="text-base sm:text-lg text-text/70 mb-6 sm:mb-8 leading-relaxed">
-                Un projet ? Une problématique ? Posez-nous vos questions et obtenez un regard expert sur votre stratégie actuelle.
-              </p>
-            </BlurFade>
-            <BlurFade delay={0.4} inView>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all duration-300 text-sm sm:text-base"
-              >
-                <span>Nous contacter</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-            </BlurFade>
-          </div>
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+
+          {/* Texte */}
+          <AnimatedSection>
+            <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">
+              Contactez-nous
+            </p>
+            <h2 className="font-display font-bold text-[48px] md:text-[56px] leading-[1.0] tracking-[-0.02em] text-melioz-navy mb-6">
+              Contactez-nous dès aujourd'hui
+            </h2>
+            <p className="font-body text-[17px] leading-[1.7] text-melioz-navy/70 mb-8">
+              Un projet ? Une problématique ? Posez-nous vos questions et obtenez un regard expert sur votre stratégie actuelle.
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
+            >
+              Nous contacter
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </AnimatedSection>
 
           {/* Panneau visuel */}
-          <BlurFade delay={0.2} inView className="relative order-1 lg:order-2">
-            <div className="relative p-6 sm:p-8 bg-background border border-secondary/20 rounded-2xl overflow-hidden">
-
-              {/* Blobs ambient */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/15 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
-
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm font-semibold text-secondary uppercase tracking-widest">Melioz — disponible</span>
+          <AnimatedSection delay={0.15}>
+            <div className="p-8 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-2 h-2 rounded-full bg-melioz-electric animate-pulse" />
+                <span className="font-body text-[11px] uppercase tracking-widest text-melioz-electric">Melioz — disponible</span>
               </div>
 
-              {/* Indicateurs */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-2xl border border-primary/15">
-                  <div className="p-2.5 bg-primary/15 rounded-xl flex-shrink-0">
-                    <Clock className="w-5 h-5 text-primary" />
+              <div className="space-y-3">
+                {[
+                  { icon: Clock, title: 'Réponse sous 24h', sub: 'Garanti en semaine' },
+                  { icon: Zap,   title: 'Premier RDV offert', sub: '30 min pour parler de votre projet' },
+                  { icon: MessageCircle, title: 'Collaboration 100% en ligne', sub: 'Visio, outils partagés, suivi en temps réel' },
+                ].map(({ icon: Icon, title, sub }) => (
+                  <div key={title} className="flex items-center gap-4 p-4 rounded-xl border border-melioz-navy/10 bg-melioz-offwhite">
+                    <div className="flex-shrink-0 p-2.5 rounded-lg bg-melioz-electric/10">
+                      <Icon className="w-5 h-5 text-melioz-electric" />
+                    </div>
+                    <div>
+                      <div className="font-body font-medium text-sm text-melioz-navy">{title}</div>
+                      <div className="font-body text-xs text-melioz-navy/50">{sub}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm sm:text-base font-bold text-text">Réponse sous 24h</div>
-                    <div className="text-text/50 text-xs">Garanti en semaine</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-2xl border border-accent/15">
-                  <div className="p-2.5 bg-accent/15 rounded-xl flex-shrink-0">
-                    <Zap className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <div className="text-sm sm:text-base font-bold text-text">Premier RDV offert</div>
-                    <div className="text-text/50 text-xs">30 min pour parler de votre projet</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 bg-secondary/5 rounded-2xl border border-secondary/15">
-                  <div className="p-2.5 bg-secondary/15 rounded-xl flex-shrink-0">
-                    <MessageCircle className="w-5 h-5 text-secondary" />
-                  </div>
-                  <div>
-                    <div className="text-sm sm:text-base font-bold text-text">Collaboration 100% en ligne</div>
-                    <div className="text-text/50 text-xs">Visio, outils partagés, suivi en temps réel</div>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Signature */}
-              <div className="pt-5 border-t border-secondary/20 flex items-center justify-between">
-                <div className="text-lg font-bold tracking-tight text-text">MELIOZ</div>
-                <div className="text-xs text-text/40">agencemelioz.com</div>
+              <div className="mt-6 pt-5 border-t border-melioz-navy/10 flex items-center justify-between">
+                <span className="font-display font-bold text-lg text-melioz-navy tracking-tight">MELIOZ</span>
+                <span className="font-body text-xs text-melioz-navy/40">agencemelioz.com</span>
               </div>
             </div>
-          </BlurFade>
+          </AnimatedSection>
         </div>
       </div>
     </section>
