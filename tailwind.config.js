@@ -18,7 +18,7 @@ export default {
         body:    ['DM Sans', 'sans-serif'],
       },
       animation: {
-        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+        'border-beam': 'border-beam calc(var(--duration, 8)*1s) infinite linear',
       },
       keyframes: {
         'border-beam': {

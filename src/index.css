@@ -17,11 +17,9 @@
 }
 
 body {
-  @apply bg-melioz-offwhite text-melioz-navy antialiased;
-  font-family: 'DM Sans', sans-serif;
+  @apply bg-melioz-offwhite text-melioz-navy font-body antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk Variable', sans-serif;
-  @apply font-bold text-melioz-navy;
+  @apply font-display font-bold text-melioz-navy;
 }
