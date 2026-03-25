@@ -12,21 +12,12 @@ import { useLenis } from './hooks/useLenis';
 function App() {
   useLenis();
   return (
-    <div className="min-h-screen bg-background text-text overflow-x-hidden relative">
+    <div className="min-h-screen bg-melioz-offwhite text-melioz-navy overflow-x-hidden">
       <SEO
         title="MELIOZ — Agence Digitale Paris | Design, Dev & Stratégie"
         description="Agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit. MELIOZ transforme vos ambitions en présence digitale remarquable."
         canonical="/"
       />
-      {/* Effets d'ambiance subtils avec la nouvelle palette */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        {/* Forme organique subtile - Primary */}
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/5 blob-shape blur-[120px]" />
-
-        {/* Forme organique subtile - Secondary */}
-        <div className="absolute top-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blob-shape-2 blur-[100px]" />
-      </div>
-
       <Navbar />
       <main id="main-content">
         <Hero />
@@ -34,7 +25,6 @@ function App() {
         <AboutSection />
         <CTADevis />
         <WhyUs />
-        {/* <ClientsLogos /> */}
         <ContactPreFooter />
       </main>
       <Footer />
