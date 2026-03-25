@@ -1,29 +1,44 @@
 import { ArrowRight } from 'lucide-react';
-import { BlurFade } from '@/components/magicui/blur-fade';
+import AnimatedSection from './AnimatedSection';
 
 export default function CTADevis() {
   return (
-    <section id="appel" className="py-12 sm:py-16 md:py-20 bg-white border-y border-secondary/20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <BlurFade delay={0.1} inView>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-3 sm:mb-4 px-2">
-            Prêt à lancer votre projet ?
-          </h2>
-        </BlurFade>
-        <BlurFade delay={0.25} inView>
-          <p className="text-base sm:text-lg text-text/70 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            Réservez un appel de 30 minutes pour discuter de votre projet. Notre équipe vous accompagne dans la réalisation de vos ambitions digitales.
+    <section className="relative py-32 bg-melioz-electric overflow-hidden">
+      {/* M watermark */}
+      <img
+        src="/images/Melioz Vector.svg"
+        className="absolute right-0 top-0 w-[500px] opacity-[0.06] pointer-events-none select-none"
+        aria-hidden="true"
+        style={{ filter: 'brightness(0) invert(1)' }}
+      />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <AnimatedSection>
+          <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-offwhite/60 mb-6">
+            Prêt à démarrer ?
           </p>
-        </BlurFade>
-        <BlurFade delay={0.4} inView>
-          <a
-            href="/book-a-call"
-            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all duration-300 text-sm sm:text-base"
-          >
-            <span>Réserver un appel</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
-        </BlurFade>
+          <h2 className="font-display font-bold text-[40px] md:text-[56px] leading-[1.0] tracking-[-0.02em] text-melioz-offwhite mb-6">
+            Transformons votre projet en réalité.
+          </h2>
+          <p className="font-body text-[18px] text-melioz-offwhite/70 max-w-xl mx-auto mb-10 leading-relaxed">
+            Un échange de 15 minutes suffit pour comprendre vos besoins et vous proposer une approche adaptée.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/book-a-call"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
+            >
+              Réserver un appel gratuit
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-melioz-offwhite/30 text-melioz-offwhite font-body font-medium rounded-xl hover:border-melioz-offwhite/60 transition-colors duration-200"
+            >
+              Nous écrire
+            </a>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
