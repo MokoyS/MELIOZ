@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from '../lib/framer-motion';
-import { baseTransition, quickTransition } from '../lib/motion';
-import Logo from './Logo';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,138 +14,115 @@ export default function Navbar() {
     { label: 'Contact', href: '/contact' },
   ];
 
+  const currentPath = window.location.pathname;
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMenuOpen(false);
-      }
-    };
+    const handleResize = () => { if (window.innerWidth >= 768) setIsMenuOpen(false); };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
     if (!isMenuOpen) return;
-    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = originalOverflow;
-    };
+    return () => { document.body.style.overflow = ''; };
   }, [isMenuOpen]);
 
   useEffect(() => {
     if (!isMenuOpen) return;
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsMenuOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setIsMenuOpen(false); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
   }, [isMenuOpen]);
 
-  const containerClasses = scrolled
-    ? 'bg-background/70 border-secondary/20 shadow-xl shadow-text/5 backdrop-blur-lg'
-    : 'bg-background/30 border-secondary/20 backdrop-blur-lg';
-
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={baseTransition}
-      className="fixed top-2 sm:top-3 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 md:px-6 pointer-events-none"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-melioz-navy/95 backdrop-blur-md' : 'bg-transparent'
+      }`}
     >
-      <motion.div
-        layout
-        className={`relative z-50 w-full max-w-6xl rounded-2xl sm:rounded-[28px] border transition-all duration-300 pointer-events-auto ${containerClasses}`}
+      <nav
+        aria-label="Navigation principale"
+        className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20"
       >
-        <nav aria-label="Navigation principale" className="flex items-center gap-3 sm:gap-4 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3">
-          {/* Logo */}
-          <div className="flex flex-1 items-center">
-            <a href="/" className="flex items-center gap-1.5 sm:gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">
-              <div className="px-1.5 sm:px-2">
-                <Logo className="h-6 w-auto sm:h-7" />
-              </div>
-            </a>
-          </div>
+        {/* Logo */}
+        <a href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-melioz-electric rounded">
+          <img src="/images/Melioz Vector.svg" className="h-8 w-auto" alt="" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          <span className="font-display font-bold text-xl tracking-tight text-melioz-offwhite">melioz</span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 justify-center text-sm font-medium">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-text/70 hover:text-text transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex flex-1 items-center justify-end gap-3">
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
             <a
-              href="/book-a-call"
-              className="px-5 py-2 bg-primary text-white text-sm font-bold rounded-full shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              key={link.label}
+              href={link.href}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+              className={`font-body text-[11px] uppercase tracking-widest transition-colors duration-200 relative group ${
+                currentPath === link.href ? 'text-melioz-offwhite' : 'text-melioz-offwhite/60 hover:text-melioz-offwhite'
+              }`}
             >
-              Réserver un appel
+              {link.label}
+              <span className={`absolute -bottom-0.5 left-0 h-px bg-melioz-electric transition-all duration-200 ${
+                currentPath === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
             </a>
-          </div>
+          ))}
+        </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex flex-1 items-center justify-end md:hidden">
-            <motion.button
-              type="button"
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center rounded-lg border border-secondary/20 bg-background p-1.5 min-h-[44px] min-w-[44px] text-text transition-all duration-300 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              aria-label={isMenuOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </motion.button>
-          </div>
-        </nav>
-      </motion.div>
+        {/* Desktop CTA */}
+        <a
+          href="/book-a-call"
+          className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-melioz-electric text-melioz-offwhite font-body text-sm font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
+        >
+          Démarrer un projet
+        </a>
 
-      {/* Mobile Menu */}
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen((p) => !p)}
+          aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          className="md:hidden p-2 text-melioz-offwhite"
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
             <motion.div
               key="overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={quickTransition}
-              className="pointer-events-auto fixed inset-0 z-40 bg-text/20 backdrop-blur-sm md:hidden"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-melioz-navy/60 md:hidden"
               onClick={() => setIsMenuOpen(false)}
             />
             <motion.div
               key="menu"
               id="mobile-menu"
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={quickTransition}
-              className="pointer-events-auto fixed left-3 right-3 sm:left-4 sm:right-4 top-[68px] sm:top-[76px] z-50 md:hidden rounded-xl sm:rounded-2xl border border-secondary/20 bg-background px-4 sm:px-5 py-5 sm:py-6 shadow-2xl shadow-text/10"
+              initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="fixed left-0 right-0 top-16 z-50 md:hidden bg-melioz-navy border-t border-melioz-offwhite/10 px-4 py-6"
             >
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 mb-6">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="rounded-lg px-4 py-3 text-left text-sm font-medium text-text hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-current={currentPath === link.href ? 'page' : undefined}
                     onClick={() => setIsMenuOpen(false)}
+                    className="px-3 py-3 font-body text-[11px] uppercase tracking-widest text-melioz-offwhite/70 hover:text-melioz-offwhite rounded-lg hover:bg-melioz-offwhite/5 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -155,15 +130,15 @@ export default function Navbar() {
               </div>
               <a
                 href="/book-a-call"
-                className="mt-5 w-full rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90 shadow-md block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-center px-4 py-3 bg-melioz-electric text-melioz-offwhite font-body text-sm font-medium rounded-xl"
               >
-                Réserver un appel
+                Démarrer un projet
               </a>
             </motion.div>
           </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
