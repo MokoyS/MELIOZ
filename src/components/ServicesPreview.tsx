@@ -1,88 +1,88 @@
 import { ArrowRight } from 'lucide-react';
-import { MagicCard } from '@/components/magicui/magic-card';
-import { BorderBeam } from '@/components/magicui/border-beam';
+import AnimatedSection from './AnimatedSection';
+
+const services = [
+  {
+    num: '01',
+    title: 'Ingénierie & Développement',
+    description: 'Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l\'évolutivité. Une infrastructure solide pour soutenir votre croissance.',
+    bg: 'bg-melioz-teal',
+    text: 'text-melioz-offwhite',
+    mFilter: 'brightness(0) invert(1)',
+    linkColor: 'text-melioz-electric',
+  },
+  {
+    num: '02',
+    title: 'Expérience & Identité Visuelle',
+    description: 'Des interfaces haute couture qui captent l\'attention et renforcent votre autorité. Parcours utilisateurs fluides dédiés à l\'engagement.',
+    bg: 'bg-melioz-mint',
+    text: 'text-melioz-navy',
+    mFilter: 'brightness(0) saturate(100%) invert(23%) sepia(29%) saturate(634%) hue-rotate(145deg) brightness(93%) contrast(88%)',
+    linkColor: 'text-melioz-electric',
+  },
+  {
+    num: '03',
+    title: 'Visibilité & Acquisition',
+    description: 'SEO, GEO & SEA. Nous pilotons vos leviers d\'acquisition et assurons un suivi analytique rigoureux pour optimiser continuellement vos performances.',
+    bg: 'bg-melioz-navy',
+    text: 'text-melioz-offwhite',
+    mFilter: 'brightness(0) invert(1)',
+    linkColor: 'text-melioz-electric',
+  },
+];
 
 export default function ServicesPreview() {
-  const services = [
-    {
-      title: 'Ingénierie & Developpement',
-      description: "Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l'évolutivité. Une infrastructure solide pour soutenir votre croissance.",
-      barColor: 'bg-primary',
-      featured: false,
-    },
-    {
-      title: 'Expérience & Identité Visuelle',
-      description: "Des interfaces haute couture, qui captent l'attention et renforcent votre autorité. Nous concevons des parcours utilisateurs fluides dédiés à l'engagement.",
-      barColor: 'bg-secondary',
-      featured: false,
-    },
-    {
-      title: 'Visibilité & Acquisition',
-      description: "SEO,GEO & SEA. Nous pilotons vos leviers d'acquisition et assurons un suivi analytique rigoureux pour optimiser continuellement vos performances.",
-      barColor: 'bg-accent',
-      featured: false,
-    },
-    {
-      title: 'Partenariat & Évolution',
-      description: "Le web ne s'arrête pas après le lancement. Nous vous formons et vous conseillons en continu pour que votre site reste un actif performant dans le temps.",
-      barColor: 'bg-primary',
-      featured: false,
-    },
-  ];
-
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-24 bg-white">
+    <section className="py-32 bg-melioz-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-xs sm:text-sm mb-3 sm:mb-4">
-            Nos Services
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text mb-3 sm:mb-4 px-2">
-            Nos solutions au services de vos enjeux digitaux
-          </h2>
-          <p className="text-base sm:text-lg text-text/70 max-w-2xl mx-auto px-2">
-            De la conception stratégique à la mise en ligne, nous orchestrons chaque étape de votre projet pour en garantir le succès.
+        <AnimatedSection className="mb-16">
+          <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">
+            Ce qu'on fait
           </p>
-        </div>
+          <h2 className="font-display font-bold text-[48px] md:text-[64px] leading-[1.0] tracking-[-0.02em] text-melioz-navy">
+            Nos solutions pour vos<br />enjeux digitaux.
+          </h2>
+        </AnimatedSection>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 mb-8 sm:mb-12">
-          {services.map((service) => (
-            <div key={service.title} className="relative group">
-              <MagicCard
-                className="p-5 sm:p-6 h-full bg-background border border-secondary/20 cursor-pointer"
-                gradientColor="#B2C2A2"
-                gradientOpacity={0.15}
-              >
-                <div className="flex flex-col h-full">
-                  <div className={`w-8 h-1 ${service.barColor} rounded-full mb-4`} />
-                  <h3 className="font-display font-bold text-base sm:text-lg mb-2 text-text">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-secondary flex-1 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </MagicCard>
-              {service.featured && (
-                <BorderBeam
-                  size={180}
-                  duration={12}
-                  colorFrom="#B2C2A2"
-                  colorTo="#E5A186"
-                />
-              )}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service, i) => (
+            <AnimatedSection key={service.num} delay={i * 0.08}>
+              <div className={`relative h-[320px] ${service.bg} rounded-2xl p-7 flex flex-col overflow-hidden`}>
+                {/* M décoratif sur teal et navy */}
+                {(service.bg === 'bg-melioz-teal' || service.bg === 'bg-melioz-navy') && (
+                  <img
+                    src="/images/Melioz Vector.svg"
+                    className="absolute top-3 right-3 w-12 opacity-[0.15] pointer-events-none select-none"
+                    aria-hidden="true"
+                    style={{ filter: service.mFilter }}
+                  />
+                )}
+
+                {/* Numéro */}
+                <span className={`font-display font-bold text-[48px] leading-none opacity-20 mb-4 ${service.text}`}>
+                  {service.num}
+                </span>
+
+                {/* Titre */}
+                <h3 className={`font-display font-bold text-[24px] leading-tight mb-3 ${service.text}`}>
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className={`font-body text-[15px] leading-relaxed opacity-70 flex-1 ${service.text}`}>
+                  {service.description}
+                </p>
+
+                {/* Lien */}
+                <a
+                  href="/services"
+                  className={`inline-flex items-center gap-1 font-body text-sm font-medium mt-4 ${service.linkColor} hover:gap-2 transition-all duration-200`}
+                >
+                  Découvrir <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </AnimatedSection>
           ))}
-        </div>
-
-        <div className="text-center px-4">
-          <a
-            href="/services"
-            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-background border-2 border-secondary/30 text-text font-semibold rounded-full hover:bg-primary/5 hover:border-secondary transition-all duration-300 text-sm sm:text-base"
-          >
-            <span>Découvrir tous nos services</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </div>
     </section>
