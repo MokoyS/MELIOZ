@@ -1,16 +1,24 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 export default function CTADevis() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [50, -50]);
+
   return (
     <section className="relative py-32 bg-melioz-electric overflow-hidden">
       {/* M watermark */}
-      <img
-        src="/images/Melioz Vector.svg"
-        className="absolute right-0 top-0 w-[500px] opacity-[0.06] pointer-events-none select-none"
-        aria-hidden="true"
-        style={{ filter: 'brightness(0) invert(1)' }}
-      />
+      <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-0 pointer-events-none select-none">
+        <img
+          src="/images/Melioz Vector.svg"
+          className="w-[500px] opacity-[0.06]"
+          aria-hidden="true"
+          style={{ filter: 'brightness(0) invert(1)' }}
+        />
+      </motion.div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <AnimatedSection>

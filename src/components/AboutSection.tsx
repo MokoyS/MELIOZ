@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 
 const values = [
@@ -7,15 +9,21 @@ const values = [
 ];
 
 export default function AboutSection() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [55, -55]);
+
   return (
     <section className="relative py-32 bg-melioz-navy overflow-hidden">
       {/* M watermark */}
-      <img
-        src="/images/Melioz Vector.svg"
-        className="absolute right-0 bottom-0 w-[500px] opacity-[0.04] pointer-events-none select-none"
-        aria-hidden="true"
-        style={{ filter: 'brightness(0) invert(1)' }}
-      />
+      <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 bottom-0 pointer-events-none select-none">
+        <img
+          src="/images/Melioz Vector.svg"
+          className="w-[500px] opacity-[0.04]"
+          aria-hidden="true"
+          style={{ filter: 'brightness(0) invert(1)' }}
+        />
+      </motion.div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid gap-16 lg:grid-cols-2 items-center">

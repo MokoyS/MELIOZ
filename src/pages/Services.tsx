@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Code2, PenTool, TrendingUp, Rocket, Wrench, HeadphonesIcon, ChevronDown } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,6 +8,10 @@ import AnimatedSection from '../components/AnimatedSection';
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [55, -55]);
 
   const services = [
     { icon: Code2,          title: 'Développement Web',          description: 'Sites vitrines, applications web et e-commerce développés avec les technologies les plus modernes.', features: ['Sites responsives et performants', 'Applications web sur-mesure', 'E-commerce avec Shopify ou WooCommerce', 'Intégrations API et automatisations'] },
@@ -29,7 +34,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
       <SEO title="Nos Services Web, Design & Stratégie | MELIOZ Paris" description="Découvrez nos expertises : développement sur-mesure, design d'interface et accompagnement marketing." canonical="/services" />
-      <Navbar />
+      <Navbar light />
       <main>
         {/* Hero — offwhite */}
         <section className="pt-32 pb-20 bg-melioz-offwhite">
@@ -103,7 +108,9 @@ export default function Services() {
 
         {/* CTA — electric */}
         <section className="relative py-40 bg-melioz-electric overflow-hidden">
-          <img src="/images/Melioz Vector.svg" className="absolute left-0 top-1/2 -translate-y-1/2 w-[400px] opacity-[0.06] pointer-events-none select-none" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          <motion.div ref={mRef} style={{ y: mY }} className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+            <img src="/images/Melioz Vector.svg" className="w-[400px] opacity-[0.06]" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          </motion.div>
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <AnimatedSection>
               <h2 className="font-display font-bold text-[48px] md:text-[64px] leading-[1.0] tracking-[-0.02em] text-melioz-offwhite mb-6">

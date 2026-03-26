@@ -1,21 +1,29 @@
 // src/pages/NotFound.tsx
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function NotFound() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [50, -50]);
+
   return (
     <div className="flex flex-col min-h-screen bg-melioz-navy text-melioz-offwhite">
       <Navbar />
       {/* flex-1 remplace min-h-screen sur main pour éviter le double overflow */}
       <main className="relative flex flex-col flex-1 items-center justify-center overflow-hidden px-4">
         {/* M watermark */}
-        <img
-          src="/images/Melioz Vector.svg"
-          className="absolute inset-0 m-auto w-[500px] opacity-[0.06] pointer-events-none select-none"
-          aria-hidden="true"
-          style={{ filter: 'brightness(0) invert(1)' }}
-        />
+        <motion.div ref={mRef} style={{ y: mY }} className="absolute inset-0 m-auto w-fit h-fit pointer-events-none select-none">
+          <img
+            src="/images/Melioz Vector.svg"
+            className="w-[500px] opacity-[0.06]"
+            aria-hidden="true"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
+        </motion.div>
 
         <div className="relative z-10 text-center">
           <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">Erreur</p>

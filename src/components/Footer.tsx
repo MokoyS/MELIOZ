@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Linkedin, Camera, Code2, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -15,15 +17,21 @@ export default function Footer() {
     { label: 'CGU', href: '/conditions-generales' },
   ];
 
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [30, -30]);
+
   return (
     <footer className="relative bg-melioz-navy overflow-hidden">
       {/* M watermark */}
-      <img
-        src="/images/Melioz Vector.svg"
-        className="absolute bottom-0 left-0 w-96 opacity-[0.03] pointer-events-none select-none"
-        aria-hidden="true"
-        style={{ filter: 'brightness(0) invert(1)' }}
-      />
+      <motion.div ref={mRef} style={{ y: mY }} className="absolute bottom-0 left-0 pointer-events-none select-none">
+        <img
+          src="/images/Melioz Vector.svg"
+          className="w-96 opacity-[0.03]"
+          aria-hidden="true"
+          style={{ filter: 'brightness(0) invert(1)' }}
+        />
+      </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -92,14 +100,24 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-melioz-offwhite/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="font-body text-xs text-melioz-offwhite/30">© 2026 Melioz. Tous droits réservés.</p>
-          <div className="flex gap-4">
-            {legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="font-body text-xs text-melioz-offwhite/30 hover:text-melioz-offwhite/60 transition-colors">
-                {link.label}
-              </a>
-            ))}
+        <div className="pt-8">
+          <motion.div
+            className="h-px bg-melioz-offwhite/10 mb-8"
+            style={{ originX: '0%' }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: '-20px' }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+          />
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p className="font-body text-xs text-melioz-offwhite/30">© 2026 Melioz. Tous droits réservés.</p>
+            <div className="flex gap-4">
+              {legalLinks.map((link) => (
+                <a key={link.label} href={link.href} className="font-body text-xs text-melioz-offwhite/30 hover:text-melioz-offwhite/60 transition-colors">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

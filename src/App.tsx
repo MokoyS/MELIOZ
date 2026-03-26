@@ -7,10 +7,9 @@ import WhyUs from './components/WhyUs';
 import ContactPreFooter from './components/ContactPreFooter';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
-import { useLenis } from './hooks/useLenis';
+import SectionLine from './components/SectionLine';
 
 function App() {
-  useLenis();
   return (
     <div className="min-h-screen bg-melioz-offwhite text-melioz-navy overflow-x-hidden">
       <SEO
@@ -22,9 +21,12 @@ function App() {
       <main id="main-content">
         <Hero />
         <ServicesPreview />
+        <SectionLine className="bg-melioz-navy/10 mx-4 sm:mx-6" />
         <AboutSection />
         <CTADevis />
+        <SectionLine className="bg-melioz-navy/10 mx-4 sm:mx-6" />
         <WhyUs />
+        <SectionLine className="bg-melioz-navy/10 mx-4 sm:mx-6" />
         <ContactPreFooter />
       </main>
       <Footer />

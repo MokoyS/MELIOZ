@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Heart, Target, Lightbulb } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -11,6 +13,14 @@ const values = [
 ];
 
 export default function Agence() {
+  const mRef1 = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY1 } = useScroll({ target: mRef1, offset: ['start end', 'end start'] });
+  const mY1 = useTransform(mScrollY1, [0, 1], [65, -65]);
+
+  const mRef2 = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY2 } = useScroll({ target: mRef2, offset: ['start end', 'end start'] });
+  const mY2 = useTransform(mScrollY2, [0, 1], [65, -65]);
+
   return (
     <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
       <SEO
@@ -22,7 +32,9 @@ export default function Agence() {
       <main>
         {/* Hero — teal */}
         <section className="relative min-h-[60vh] bg-melioz-teal flex items-center overflow-hidden pt-20">
-          <img src="/images/Melioz Vector.svg" className="absolute right-0 top-0 w-[500px] opacity-[0.05] pointer-events-none select-none" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          <motion.div ref={mRef1} style={{ y: mY1 }} className="absolute right-0 top-[20%] pointer-events-none select-none">
+            <img src="/images/Melioz Vector.svg" className="w-[500px] opacity-[0.05]" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          </motion.div>
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
             <AnimatedSection>
               <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">Notre histoire</p>
@@ -83,7 +95,9 @@ export default function Agence() {
 
         {/* Vision CTA — electric */}
         <section className="relative py-40 bg-melioz-electric overflow-hidden">
-          <img src="/images/Melioz Vector.svg" className="absolute left-0 top-1/2 -translate-y-1/2 w-[400px] opacity-[0.06] pointer-events-none select-none" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          <motion.div ref={mRef2} style={{ y: mY2 }} className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+            <img src="/images/Melioz Vector.svg" className="w-[400px] opacity-[0.06]" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          </motion.div>
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <AnimatedSection>
               <h2 className="font-display font-bold text-[48px] md:text-[64px] leading-[1.0] tracking-[-0.02em] text-melioz-offwhite mb-6">

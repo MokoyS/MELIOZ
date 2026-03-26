@@ -1,9 +1,15 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Construction } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
 export default function Realisations() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [60, -60]);
+
   return (
     <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
       <SEO
@@ -15,7 +21,9 @@ export default function Realisations() {
       <main>
         {/* Hero — teal */}
         <section className="relative min-h-[60vh] bg-melioz-teal flex items-center overflow-hidden pt-20">
-          <img src="/images/Melioz Vector.svg" className="absolute right-0 top-0 w-[500px] opacity-[0.05] pointer-events-none select-none" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
+            <img src="/images/Melioz Vector.svg" className="w-[500px] opacity-[0.05]" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
+          </motion.div>
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
             <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">Nos réalisations</p>
             <h1 className="font-display font-extrabold text-[64px] sm:text-[80px] md:text-[96px] leading-[0.9] tracking-[-0.04em] text-melioz-offwhite max-w-3xl">

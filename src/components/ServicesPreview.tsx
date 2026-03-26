@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
@@ -32,6 +34,10 @@ const services = [
 ];
 
 export default function ServicesPreview() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [50, -50]);
+
   return (
     <section className="py-32 bg-melioz-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -50,12 +56,14 @@ export default function ServicesPreview() {
               <div className={`relative h-[320px] ${service.bg} rounded-2xl p-7 flex flex-col overflow-hidden`}>
                 {/* M décoratif sur teal et navy */}
                 {(service.bg === 'bg-melioz-teal' || service.bg === 'bg-melioz-navy') && (
-                  <img
-                    src="/images/Melioz Vector.svg"
-                    className="absolute top-3 right-3 w-12 opacity-[0.15] pointer-events-none select-none"
-                    aria-hidden="true"
-                    style={{ filter: service.mFilter }}
-                  />
+                  <motion.div ref={mRef} style={{ y: mY }} className="absolute top-3 right-3 pointer-events-none select-none">
+                    <img
+                      src="/images/Melioz Vector.svg"
+                      className="w-12 opacity-[0.15]"
+                      aria-hidden="true"
+                      style={{ filter: service.mFilter }}
+                    />
+                  </motion.div>
                 )}
 
                 {/* Numéro */}

@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 
 const reasons = [
@@ -16,6 +18,10 @@ const reasons = [
 ];
 
 export default function WhyUs() {
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [45, -45]);
+
   return (
     <section className="py-32 bg-melioz-mint">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -32,7 +38,9 @@ export default function WhyUs() {
           {reasons.map((reason, i) => (
             <AnimatedSection key={reason.title} delay={i * 0.08}>
               <div className="relative group p-7 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl hover:border-melioz-electric hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
-                <img src="/images/Melioz Vector.svg" className="absolute top-3 right-3 w-12 opacity-[0.15] pointer-events-none select-none" aria-hidden="true" />
+                <motion.div ref={mRef} style={{ y: mY }} className="absolute top-3 right-3 pointer-events-none select-none">
+                  <img src="/images/Melioz Vector.svg" className="w-12 opacity-[0.15]" aria-hidden="true" />
+                </motion.div>
                 <div className="w-8 h-0.5 bg-melioz-electric mb-5" />
                 <h3 className="font-display font-bold text-[22px] text-melioz-navy mb-3">
                   {reason.title}

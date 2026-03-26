@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from '../lib/framer-motion';
 
-export default function Navbar() {
+interface NavbarProps {
+  light?: boolean;
+}
+
+export default function Navbar({ light = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   const navLinks = [
     { label: 'Agence', href: '/agence' },
@@ -53,26 +58,42 @@ export default function Navbar() {
       >
         {/* Logo */}
         <a href="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-melioz-electric rounded">
-          <img src="/images/logo_white_text.png" className="h-8 w-auto" alt="Melioz" />
+          <img
+            src={light && !scrolled ? '/images/logo_black_text.png' : '/images/logo_white_text.png'}
+            className="h-8 w-auto"
+            alt="Melioz"
+          />
         </a>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              aria-current={currentPath === link.href ? 'page' : undefined}
-              className={`font-body text-[11px] uppercase tracking-widest transition-colors duration-200 relative group ${
-                currentPath === link.href ? 'text-melioz-offwhite' : 'text-melioz-offwhite/60 hover:text-melioz-offwhite'
-              }`}
-            >
-              {link.label}
-              <span className={`absolute -bottom-0.5 left-0 h-px bg-melioz-electric transition-all duration-200 ${
-                currentPath === link.href ? 'w-full' : 'w-0 group-hover:w-full'
-              }`} />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = currentPath === link.href;
+            const isHovered = hoveredLink === link.label;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                onMouseEnter={() => setHoveredLink(link.label)}
+                onMouseLeave={() => setHoveredLink(null)}
+                className={`font-body text-[11px] uppercase tracking-widest transition-colors duration-200 relative ${
+                  light && !scrolled
+                    ? isActive ? 'text-melioz-navy' : 'text-melioz-navy/50 hover:text-melioz-navy'
+                    : isActive ? 'text-melioz-offwhite' : 'text-melioz-offwhite/60 hover:text-melioz-offwhite'
+                }`}
+              >
+                {link.label}
+                <motion.span
+                  className="absolute -bottom-0.5 left-0 h-px w-full bg-melioz-electric"
+                  style={{ originX: 0 }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isActive || isHovered ? 1 : 0 }}
+                  transition={{ duration: isHovered ? 0.25 : 0.2, ease: 'easeInOut' }}
+                />
+              </a>
+            );
+          })}
         </div>
 
         {/* Desktop CTA */}
@@ -90,7 +111,7 @@ export default function Navbar() {
           aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          className="md:hidden p-2 text-melioz-offwhite"
+          className={`md:hidden p-2 ${light && !scrolled ? 'text-melioz-navy' : 'text-melioz-offwhite'}`}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>

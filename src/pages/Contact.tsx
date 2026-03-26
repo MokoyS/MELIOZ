@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { ArrowRight, Mail, CheckCircle, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
+import MLoader from '../components/MLoader';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
@@ -21,6 +23,10 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const mRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: mScrollY } = useScroll({ target: mRef, offset: ['start end', 'end start'] });
+  const mY = useTransform(mScrollY, [0, 1], [50, -50]);
 
   const {
     register,
@@ -98,12 +104,14 @@ export default function Contact() {
       <main>
         {/* Hero — navy */}
         <section className="relative bg-melioz-navy pt-20 overflow-hidden">
-          <img
-            src="/images/Melioz Vector.svg"
-            className="absolute right-0 top-0 w-[400px] opacity-[0.04] pointer-events-none select-none"
-            aria-hidden="true"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
+          <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
+            <img
+              src="/images/Melioz Vector.svg"
+              className="w-[400px] opacity-[0.04]"
+              aria-hidden="true"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </motion.div>
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
             <AnimatedSection>
               <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">Contact</p>
@@ -199,7 +207,7 @@ export default function Contact() {
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <MLoader size={24} strokeColor="currentColor" strokeWidth={10} />
                       <span>Envoi en cours...</span>
                     </>
                   ) : (

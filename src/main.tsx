@@ -1,8 +1,9 @@
-import { StrictMode, Suspense, lazy } from 'react';
+import { StrictMode, Suspense, lazy, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { MotionProvider } from './lib/framer-motion';
 import LoadingSpinner from './components/LoadingSpinner';
+import { useLenis } from './hooks/useLenis';
 import './index.css';
 
 // En développement, charger directement pour plus de rapidité
@@ -27,6 +28,7 @@ if (isDev) {
     { default: BookACall },
     { default: CookieBanner },
     { default: NotFound },
+    { default: SplashScreen },
   ] = await Promise.all([
     import('./App.tsx'),
     import('./pages/Services.tsx'),
@@ -41,6 +43,7 @@ if (isDev) {
     import('./pages/BookACall.tsx'),
     import('./components/CookieBanner.tsx'),
     import('./pages/NotFound.tsx'),
+    import('./components/SplashScreen.tsx'),
   ]);
 
   const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/';
@@ -75,18 +78,33 @@ if (isDev) {
     }
   };
 
+  function Root() {
+    const [splashDone, setSplashDone] = useState(
+      () => !!sessionStorage.getItem('melioz_splash_shown')
+    );
+    useLenis();
+
+    return (
+      <>
+        {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
+        {splashDone && getComponent()}
+        {splashDone && <CookieBanner />}
+      </>
+    );
+  }
+
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <HelmetProvider>
         <MotionProvider>
-          {getComponent()}
-          <CookieBanner />
+          <Root />
         </MotionProvider>
       </HelmetProvider>
     </StrictMode>
   );
 } else {
   // Production : lazy loading pour optimiser le bundle
+  const SplashScreen = lazy(() => import('./components/SplashScreen.tsx'));
   const App = lazy(() => import('./App.tsx'));
   const Services = lazy(() => import('./pages/Services.tsx'));
   const Agence = lazy(() => import('./pages/Agence.tsx'));
@@ -133,16 +151,36 @@ if (isDev) {
     }
   };
 
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <HelmetProvider>
-        <MotionProvider>
+  function Root() {
+    const [splashDone, setSplashDone] = useState(
+      () => !!sessionStorage.getItem('melioz_splash_shown')
+    );
+    useLenis();
+
+    return (
+      <>
+        {!splashDone && (
+          <Suspense fallback={null}>
+            <SplashScreen onComplete={() => setSplashDone(true)} />
+          </Suspense>
+        )}
+        {splashDone && (
           <Suspense fallback={<LoadingSpinner />}>
             {getComponent()}
             <Suspense fallback={null}>
               <CookieBanner />
             </Suspense>
           </Suspense>
+        )}
+      </>
+    );
+  }
+
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <HelmetProvider>
+        <MotionProvider>
+          <Root />
         </MotionProvider>
       </HelmetProvider>
     </StrictMode>
