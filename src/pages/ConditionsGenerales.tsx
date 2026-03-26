@@ -156,7 +156,7 @@ export default function ConditionsGenerales() {
               </div>
 
               {/* Article 3 : Paiements */}
-              <div className="mb-8 bg-accent/5 border border-accent/20 rounded-[24px] p-6">
+              <div className="mb-8 bg-melioz-mint/30 border border-melioz-navy/10 rounded-[24px] p-6">
                 <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 3 - Modalités de Paiement
                 </h3>
@@ -178,7 +178,7 @@ export default function ConditionsGenerales() {
               </div>
 
               {/* Article 4 : Transfert de Propriété */}
-              <div className="mb-8 bg-primary/10 border border-primary/30 rounded-[24px] p-6">
+              <div className="mb-8 bg-melioz-mint border border-melioz-navy/10 rounded-[24px] p-6">
                 <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 4 - Transfert de Propriété et Droits d'Exploitation
                 </h3>

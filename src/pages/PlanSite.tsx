@@ -9,7 +9,7 @@ export default function PlanSite() {
       title: 'Pages principales',
       icon: Home,
       color: 'text-melioz-electric',
-      bgColor: 'bg-primary/10',
+      bgColor: 'bg-melioz-electric/10',
       links: [
         { label: 'Accueil', href: '/', description: 'Page d\'accueil de l\'agence MELIOZ' },
         { label: 'Services', href: '/services', description: 'Découvrez nos prestations digitales' },
@@ -20,8 +20,8 @@ export default function PlanSite() {
     {
       title: 'À propos',
       icon: Users,
-      color: 'text-secondary',
-      bgColor: 'bg-secondary/10',
+      color: 'text-melioz-teal',
+      bgColor: 'bg-melioz-teal/10',
       links: [
         { label: 'L\'agence', href: '/agence', description: 'Notre histoire et nos valeurs' },
       ],
@@ -29,8 +29,8 @@ export default function PlanSite() {
     {
       title: 'Contact & Réservation',
       icon: MessageSquare,
-      color: 'text-accent',
-      bgColor: 'bg-accent/10',
+      color: 'text-melioz-lavender',
+      bgColor: 'bg-melioz-lavender/20',
       links: [
         { label: 'Contact', href: '/contact', description: 'Nous contacter directement' },
         { label: 'Réserver un appel', href: '/book-a-call', description: 'Réservez un appel de 15 minutes pour discuter de votre projet' },
@@ -62,7 +62,7 @@ export default function PlanSite() {
           {/* Header */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-primary/10 rounded-xl">
+              <div className="p-2.5 bg-melioz-electric/10 rounded-xl">
                 <Map className="w-5 h-5 text-melioz-electric" />
               </div>
               <span className="text-melioz-electric font-semibold text-sm">Navigation</span>
@@ -80,7 +80,7 @@ export default function PlanSite() {
             {sections.map((section) => (
               <div
                 key={section.title}
-                className="p-6 bg-melioz-offwhite border border-secondary/20 rounded-2xl shadow-soft"
+                className="p-6 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl"
               >
                 {/* Section Header */}
                 <div className="flex items-center gap-3 mb-5">
@@ -98,7 +98,7 @@ export default function PlanSite() {
                     <li key={link.href}>
                       <a
                         href={link.href}
-                        className="group flex items-start gap-3 p-3 -mx-3 rounded-xl hover:bg-primary/5 transition-colors"
+                        className="group flex items-start gap-3 p-3 -mx-3 rounded-xl hover:bg-melioz-electric/5 transition-colors"
                       >
                         <ArrowRight className="w-4 h-4 text-melioz-electric mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="flex-1">
