@@ -27,7 +27,7 @@ export default function ConditionsGenerales() {
 
           <div className="space-y-12 text-melioz-navy/70 font-body leading-relaxed">
             {/* PARTIE 1 : CGU */}
-            <section className="bg-white/50 border border-secondary/10 rounded-[24px] p-8 sm:p-10">
+            <section className="bg-white border border-melioz-navy/10 rounded-[24px] p-8 sm:p-10">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-melioz-navy mb-4 font-display">
                   PARTIE 1 : Conditions Générales d'Utilisation (CGU)
@@ -113,7 +113,7 @@ export default function ConditionsGenerales() {
             </section>
 
             {/* PARTIE 2 : CGV */}
-            <section className="bg-white/50 border border-secondary/10 rounded-[24px] p-8 sm:p-10">
+            <section className="bg-white border border-melioz-navy/10 rounded-[24px] p-8 sm:p-10">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-melioz-navy mb-4 font-display">
                   PARTIE 2 : Conditions Générales de Vente (CGV)
@@ -260,7 +260,7 @@ export default function ConditionsGenerales() {
             </section>
 
             {/* Date de mise à jour */}
-            <section className="pt-6 border-t border-secondary/20">
+            <section className="pt-6 border-t border-melioz-navy/10">
               <p className="text-sm text-melioz-navy/70 font-body">
                 Dernière mise à jour : Janvier 2026
               </p>

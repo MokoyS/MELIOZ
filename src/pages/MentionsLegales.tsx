@@ -105,7 +105,7 @@ export default function MentionsLegales() {
             </section>
 
             {/* Date de mise à jour */}
-            <section className="pt-6 border-t border-secondary/20">
+            <section className="pt-6 border-t border-melioz-navy/10">
               <p className="text-sm text-melioz-navy/70 font-body">
                 Dernière mise à jour : Janvier 2026
               </p>

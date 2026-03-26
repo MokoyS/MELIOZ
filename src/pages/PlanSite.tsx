@@ -118,7 +118,7 @@ export default function PlanSite() {
           </div>
 
           {/* Sitemap XML Link - Accessible mais discret */}
-          <div className="mt-12 pt-6 border-t border-secondary/20">
+          <div className="mt-12 pt-6 border-t border-melioz-navy/10">
             <div className="flex items-center justify-center gap-2 text-xs text-melioz-navy/40">
               <FileText className="w-3 h-3" />
               <a
