@@ -15,7 +15,7 @@ export default function SEO({
   description, 
   canonical,
   type = 'website',
-  image = `${BASE_URL}/images/og-image.svg`
+  image = `${BASE_URL}/images/logo_black_text.png`
 }: SEOProps) {
   const fullTitle = title;
   const url = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
