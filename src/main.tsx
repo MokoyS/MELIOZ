@@ -26,6 +26,7 @@ if (isDev) {
     { default: ConditionsGenerales },
     { default: BookACall },
     { default: CookieBanner },
+    { default: NotFound },
   ] = await Promise.all([
     import('./App.tsx'),
     import('./pages/Services.tsx'),
@@ -39,6 +40,7 @@ if (isDev) {
     import('./pages/ConditionsGenerales.tsx'),
     import('./pages/BookACall.tsx'),
     import('./components/CookieBanner.tsx'),
+    import('./pages/NotFound.tsx'),
   ]);
 
   const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/';
@@ -66,8 +68,10 @@ if (isDev) {
         return <ConditionsGenerales />;
       case '/book-a-call':
         return <BookACall />;
-      default:
+      case '/':
         return <App />;
+      default:
+        return <NotFound />;
     }
   };
 
@@ -95,6 +99,7 @@ if (isDev) {
   const ConditionsGenerales = lazy(() => import('./pages/ConditionsGenerales.tsx'));
   const BookACall = lazy(() => import('./pages/BookACall.tsx'));
   const CookieBanner = lazy(() => import('./components/CookieBanner.tsx'));
+  const NotFound = lazy(() => import('./pages/NotFound.tsx'));
 
   const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/';
   const currentPath = normalizePath(window.location.pathname);
@@ -121,8 +126,10 @@ if (isDev) {
         return <ConditionsGenerales />;
       case '/book-a-call':
         return <BookACall />;
-      default:
+      case '/':
         return <App />;
+      default:
+        return <NotFound />;
     }
   };
 
