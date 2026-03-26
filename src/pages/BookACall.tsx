@@ -87,12 +87,8 @@ export default function BookACall() {
                       src="https://tally.so/embed/LZpNJG?hideTitle=1&transparentBackground=1&alignLeft=1"
                       width="100%"
                       height="100%"
-                      frameBorder="0"
-                      marginHeight={0}
-                      marginWidth={0}
                       title="Formulaire de qualification"
-                      style={{ border: 'none', display: 'block', overflow: 'hidden' }}
-                      scrolling="no"
+                      style={{ border: 'none', display: 'block', overflow: 'hidden', margin: 0 }}
                       onLoad={() => {
                         const urlParams = new URLSearchParams(window.location.search);
                         if (urlParams.get('submitted') === 'true' || urlParams.get('tally_submitted') === 'true') {
