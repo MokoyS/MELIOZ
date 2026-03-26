@@ -18,12 +18,16 @@ export default function BookACall() {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
+      // Guard against messages from non-Tally origins
+      if (!event.origin.includes('tally.so')) return;
       if (
         (event.data && event.data.type === 'tally-form-submitted') ||
         (event.data && event.data.type === 'tally:form:submitted') ||
-        (event.origin.includes('tally.so') && event.data?.event === 'tallyFormSubmitted')
+        (event.data?.event === 'tallyFormSubmitted')
       ) {
         setShowCalendar(true);
+        // Persists across page reloads so returning users skip the qualification form.
+        // Cleared intentionally when/if a full re-booking flow is implemented.
         localStorage.setItem('tally_submitted', 'true');
       }
     };
@@ -90,8 +94,9 @@ export default function BookACall() {
                       title="Formulaire de qualification"
                       style={{ border: 'none', display: 'block', overflow: 'hidden', margin: 0 }}
                       onLoad={() => {
+                        // Handles redirect-based submission (some Tally embed configs)
                         const urlParams = new URLSearchParams(window.location.search);
-                        if (urlParams.get('submitted') === 'true' || urlParams.get('tally_submitted') === 'true') {
+                        if (urlParams.get('tally_submitted') === 'true') {
                           setShowCalendar(true);
                           localStorage.setItem('tally_submitted', 'true');
                         }

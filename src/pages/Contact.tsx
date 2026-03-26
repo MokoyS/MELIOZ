@@ -187,7 +187,7 @@ export default function Contact() {
                 </div>
 
                 {error && (
-                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
+                  <div role="alert" className="p-4 bg-red-50 border border-red-200 rounded-xl">
                     <p className="text-sm text-red-600 font-body">{error}</p>
                   </div>
                 )}
