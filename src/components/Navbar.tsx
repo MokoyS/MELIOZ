@@ -52,9 +52,8 @@ export default function Navbar() {
         className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20"
       >
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-melioz-electric rounded">
-          <img src="/images/Melioz Vector.svg" className="h-8 w-auto" alt="" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
-          <span className="font-display font-bold text-xl tracking-tight text-melioz-offwhite">melioz</span>
+        <a href="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-melioz-electric rounded">
+          <img src="/images/logo_white_text.png" className="h-8 w-auto" alt="Melioz" />
         </a>
 
         {/* Desktop links */}

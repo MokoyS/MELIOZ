@@ -29,9 +29,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Col 1 — Marque */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <img src="/images/Melioz Vector.svg" className="h-12 w-auto" alt="Melioz" style={{ filter: 'brightness(0) invert(1)' }} />
-              <span className="font-display font-bold text-xl text-melioz-offwhite">melioz</span>
+            <a href="/" className="inline-block mb-4">
+              <img src="/images/logo_white_text.png" className="h-10 w-auto" alt="Melioz" />
             </a>
             <p className="font-body text-sm text-melioz-offwhite/50 leading-relaxed max-w-xs">
               Agence digitale à taille humaine. Design, développement et stratégie pour les entreprises ambitieuses.
