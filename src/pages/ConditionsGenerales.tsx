@@ -20,12 +20,12 @@ export default function ConditionsGenerales() {
             <h1 className="text-4xl sm:text-5xl text-melioz-navy font-display font-extrabold mb-6">
               Conditions Générales
             </h1>
-            <p className="text-lg text-melioz-navy/70 font-body font-sans">
+            <p className="text-lg text-melioz-navy/70 font-body">
               Conditions Générales d'Utilisation (CGU) et Conditions Générales de Vente (CGV)
             </p>
           </div>
 
-          <div className="space-y-12 text-melioz-navy/70 font-body leading-relaxed font-sans">
+          <div className="space-y-12 text-melioz-navy/70 font-body leading-relaxed">
             {/* PARTIE 1 : CGU */}
             <section className="bg-white/50 border border-secondary/10 rounded-[24px] p-8 sm:p-10">
               <div className="mb-8">
@@ -261,10 +261,10 @@ export default function ConditionsGenerales() {
 
             {/* Date de mise à jour */}
             <section className="pt-6 border-t border-secondary/20">
-              <p className="text-sm text-melioz-navy/70 font-body font-sans">
+              <p className="text-sm text-melioz-navy/70 font-body">
                 Dernière mise à jour : Janvier 2026
               </p>
-              <p className="text-sm text-melioz-navy/70 font-body font-sans mt-2">
+              <p className="text-sm text-melioz-navy/70 font-body mt-2">
                 Pour toute question concernant ces conditions générales, contactez-nous à : <a href="mailto:contact@agencemelioz.com" className="text-melioz-electric hover:underline">contact@agencemelioz.com</a>
               </p>
             </section>
