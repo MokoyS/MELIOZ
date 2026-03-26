@@ -7,6 +7,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Empêcher le scroll horizontal global */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Touch targets minimum 44px */
+button, a, [role="button"] {
+  min-height: 44px;
+}
+/* Exception : liens inline dans le texte */
+p a, li a {
+  min-height: unset;
+}
+
 :root {
   --color-electric: #3B54CC;
 }

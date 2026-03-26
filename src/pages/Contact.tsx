@@ -68,20 +68,23 @@ export default function Contact() {
     return (
       <div className="flex flex-col min-h-screen bg-melioz-offwhite text-melioz-navy">
         <Navbar />
-        <main className="flex-1 flex items-center justify-center py-20">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <main className="flex-1 flex items-center justify-center py-16 md:py-20 px-5 sm:px-6">
+          <div className="max-w-2xl mx-auto text-center">
             <div className="p-4 bg-melioz-mint border border-melioz-navy/10 rounded-2xl w-20 h-20 mx-auto mb-8 flex items-center justify-center">
               <CheckCircle className="w-10 h-10 text-melioz-teal" />
             </div>
-            <h2 className="font-display font-bold text-[40px] text-melioz-navy mb-4">
+            <h2
+              className="font-display font-bold text-melioz-navy mb-4"
+              style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}
+            >
               Message envoyé !
             </h2>
-            <p className="font-body text-[18px] text-melioz-navy/70 mb-10">
+            <p className="font-body text-[15px] md:text-[18px] text-melioz-navy/70 mb-10">
               Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais.
             </p>
             <a
               href="/"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:bg-melioz-electric/90 transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:bg-melioz-electric/90 transition-colors duration-300"
             >
               Retour à l'accueil
               <ArrowRight className="w-5 h-5" />
@@ -103,19 +106,22 @@ export default function Contact() {
       <Navbar />
       <main>
         {/* Hero — navy */}
-        <section className="relative bg-melioz-navy pt-20 overflow-hidden">
+        <section className="relative bg-melioz-navy pt-16 md:pt-20 overflow-hidden">
           <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
             <img
               src="/images/Melioz Vector.svg"
-              className="w-[400px] opacity-[0.04]"
+              className="w-[300px] md:w-[400px] opacity-[0.04]"
               aria-hidden="true"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
           </motion.div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
+          <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-16 md:py-24">
             <AnimatedSection>
-              <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">Contact</p>
-              <h1 className="font-display font-extrabold text-[64px] sm:text-[80px] leading-[0.9] tracking-[-0.04em] text-melioz-offwhite max-w-2xl">
+              <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">Contact</p>
+              <h1
+                className="font-display font-extrabold leading-[0.9] tracking-[-0.04em] text-melioz-offwhite max-w-2xl"
+                style={{ fontSize: 'clamp(36px, 7vw, 80px)' }}
+              >
                 Une question ? Contactez-nous
               </h1>
             </AnimatedSection>
@@ -123,12 +129,12 @@ export default function Contact() {
         </section>
 
         {/* Formulaire — offwhite */}
-        <section className="py-20 bg-melioz-offwhite">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <section className="py-16 md:py-24 bg-melioz-offwhite">
+          <div className="max-w-2xl mx-auto px-5 sm:px-6">
             <AnimatedSection>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">
                 <div>
-                  <label htmlFor="name" className="block font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
+                  <label htmlFor="name" className="block font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
                     Nom complet *
                   </label>
                   <input
@@ -137,7 +143,7 @@ export default function Contact() {
                     {...register('name')}
                     aria-describedby={errors.name ? 'name-error' : undefined}
                     aria-invalid={errors.name ? 'true' : undefined}
-                    className="w-full px-4 py-3 bg-white border border-melioz-navy/20 rounded-xl font-body text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border border-melioz-navy/20 rounded-xl font-body text-[15px] md:text-[17px] text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
                     placeholder="Votre nom"
                   />
                   {errors.name && (
@@ -146,7 +152,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
+                  <label htmlFor="email" className="block font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
                     Email *
                   </label>
                   <input
@@ -155,7 +161,7 @@ export default function Contact() {
                     {...register('email')}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                     aria-invalid={errors.email ? 'true' : undefined}
-                    className="w-full px-4 py-3 bg-white border border-melioz-navy/20 rounded-xl font-body text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border border-melioz-navy/20 rounded-xl font-body text-[15px] md:text-[17px] text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
                     placeholder="votre@email.com"
                   />
                   {errors.email && (
@@ -164,20 +170,20 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
+                  <label htmlFor="subject" className="block font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
                     Sujet
                   </label>
                   <input
                     type="text"
                     id="subject"
                     {...register('subject')}
-                    className="w-full px-4 py-3 bg-white border border-melioz-navy/20 rounded-xl font-body text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border border-melioz-navy/20 rounded-xl font-body text-[15px] md:text-[17px] text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors"
                     placeholder="Objet de votre message"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
+                  <label htmlFor="message" className="block font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-2">
                     Message *
                   </label>
                   <textarea
@@ -186,7 +192,7 @@ export default function Contact() {
                     {...register('message')}
                     aria-describedby={errors.message ? 'message-error' : undefined}
                     aria-invalid={errors.message ? 'true' : undefined}
-                    className="w-full px-4 py-3 bg-white border border-melioz-navy/20 rounded-xl font-body text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors resize-none"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border border-melioz-navy/20 rounded-xl font-body text-[15px] md:text-[17px] text-melioz-navy focus:outline-none focus:border-melioz-electric transition-colors resize-none"
                     placeholder="Décrivez votre projet ou votre demande..."
                   />
                   {errors.message && (
@@ -203,7 +209,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:bg-melioz-electric/90 transition-colors duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full min-h-[52px] px-8 py-4 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:bg-melioz-electric/90 transition-colors duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -219,13 +225,13 @@ export default function Contact() {
                 </button>
               </form>
 
-              <div className="mt-12 pt-8 border-t border-melioz-navy/10 flex items-center gap-4">
-                <div className="p-3 bg-melioz-mint border border-melioz-navy/10 rounded-xl">
+              <div className="mt-10 md:mt-12 pt-8 border-t border-melioz-navy/10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="p-3 bg-melioz-mint border border-melioz-navy/10 rounded-xl flex-shrink-0">
                   <Mail className="w-5 h-5 text-melioz-teal" />
                 </div>
                 <div>
-                  <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-0.5">Email</p>
-                  <a href="mailto:contact@agencemelioz.com" className="font-body text-melioz-navy hover:text-melioz-electric transition-colors">
+                  <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-0.5">Email</p>
+                  <a href="mailto:contact@agencemelioz.com" className="font-body text-[15px] md:text-[17px] text-melioz-navy hover:text-melioz-electric transition-colors">
                     contact@agencemelioz.com
                   </a>
                 </div>

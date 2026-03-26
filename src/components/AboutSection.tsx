@@ -14,7 +14,7 @@ export default function AboutSection() {
   const mY = useTransform(mScrollY, [0, 1], [55, -55]);
 
   return (
-    <section className="relative py-32 bg-melioz-navy overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-melioz-navy overflow-hidden">
       {/* M watermark */}
       <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 bottom-0 pointer-events-none select-none">
         <img
@@ -25,14 +25,17 @@ export default function AboutSection() {
         />
       </motion.div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid gap-16 lg:grid-cols-2 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Texte */}
           <AnimatedSection>
             <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">
               Notre approche
             </p>
-            <h2 className="font-display font-bold text-[40px] md:text-[56px] leading-[1.0] tracking-[-0.02em] text-melioz-offwhite mb-6">
+            <h2
+              className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-offwhite mb-6"
+              style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
+            >
               Créer, mesurer,<br />itérer.
             </h2>
             <p className="font-body text-[17px] text-melioz-offwhite/70 leading-relaxed mb-8 max-w-lg">
@@ -48,10 +51,13 @@ export default function AboutSection() {
 
           {/* Métriques */}
           <AnimatedSection delay={0.15}>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {values.map((v) => (
                 <div key={v.label} className="text-center p-6 border border-melioz-offwhite/10 rounded-2xl">
-                  <div className="font-display font-extrabold text-[40px] leading-none text-melioz-offwhite mb-2">
+                  <div
+                    className="font-display font-extrabold leading-none text-melioz-offwhite mb-2"
+                    style={{ fontSize: 'clamp(36px, 4vw, 56px)' }}
+                  >
                     {v.value}
                   </div>
                   <div className="font-body text-[12px] uppercase tracking-widest text-melioz-offwhite/40">

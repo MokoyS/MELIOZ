@@ -241,22 +241,25 @@ export default function Expertise() {
       <Navbar />
       <main>
         {/* Hero — teal */}
-        <section className="relative bg-melioz-teal pt-20 overflow-hidden">
+        <section className="relative bg-melioz-teal pt-16 md:pt-20 overflow-hidden">
           <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
             <img
               src="/images/Melioz Vector.svg"
-              className="w-[500px] opacity-[0.05]"
+              className="w-[300px] md:w-[500px] opacity-[0.05]"
               aria-hidden="true"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
           </motion.div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24">
+          <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-16 md:py-24">
             <AnimatedSection>
-              <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">Notre Expertise</p>
-              <h1 className="font-display font-extrabold text-[64px] sm:text-[80px] md:text-[96px] leading-[0.9] tracking-[-0.04em] text-melioz-offwhite max-w-3xl">
+              <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4 md:mb-6">Notre Expertise</p>
+              <h1
+                className="font-display font-extrabold leading-[0.9] tracking-[-0.04em] text-melioz-offwhite max-w-3xl"
+                style={{ fontSize: 'clamp(36px, 7vw, 96px)' }}
+              >
                 La convergence des talents, l'exigence du résultat.
               </h1>
-              <p className="font-body text-[18px] text-melioz-offwhite/70 max-w-2xl mt-8 leading-relaxed">
+              <p className="font-body text-[15px] md:text-[17px] text-melioz-offwhite/70 max-w-2xl mt-6 md:mt-8 leading-relaxed">
                 Melioz n'est pas qu'une somme de compétences, c'est une synergie d'experts dédiés à la haute performance. Nous fusionnons ingénierie de pointe et design stratégique pour bâtir des écosystèmes numériques qui dominent leur marché.
               </p>
             </AnimatedSection>
@@ -267,18 +270,21 @@ export default function Expertise() {
         {poles.map((pole, index) => {
           const PanelComponent = panelComponents[index];
           return (
-            <section key={pole.title} className={`py-32 ${pole.bg}`}>
-              <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="grid gap-16 lg:grid-cols-2 items-center">
-                  {/* Texte */}
+            <section key={pole.title} className={`py-16 md:py-24 lg:py-32 ${pole.bg}`}>
+              <div className="max-w-6xl mx-auto px-5 sm:px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                  {/* Texte — toujours en premier sur mobile */}
                   <AnimatedSection delay={0.1} className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className={`inline-flex p-4 rounded-xl ${pole.iconBg} mb-6`}>
-                      <pole.icon className={`w-7 h-7 ${pole.iconColor}`} />
+                    <div className={`inline-flex p-4 rounded-xl ${pole.iconBg} mb-5 md:mb-6`}>
+                      <pole.icon className={`w-6 h-6 md:w-7 md:h-7 ${pole.iconColor}`} />
                     </div>
-                    <h2 className="font-display font-bold text-[32px] md:text-[40px] leading-[1.1] tracking-[-0.02em] text-melioz-navy mb-4">
+                    <h2
+                      className="font-display font-bold leading-[1.1] tracking-[-0.02em] text-melioz-navy mb-4"
+                      style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
+                    >
                       {pole.title}
                     </h2>
-                    <p className="font-body text-[17px] text-melioz-navy/70 leading-relaxed mb-8">
+                    <p className="font-body text-[15px] md:text-[17px] text-melioz-navy/70 leading-relaxed mb-6 md:mb-8">
                       {pole.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -295,11 +301,11 @@ export default function Expertise() {
 
                   {/* Visuel décoratif */}
                   <AnimatedSection delay={0.25} className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="relative aspect-[4/3] bg-melioz-navy border border-melioz-offwhite/10 rounded-2xl overflow-hidden flex items-center justify-center p-8">
+                    <div className="relative h-[220px] md:h-auto md:aspect-[4/3] bg-melioz-navy border border-melioz-offwhite/10 rounded-2xl overflow-hidden flex items-center justify-center p-6 md:p-8">
                       {/* Subtle M watermark background */}
                       <img
                         src="/images/Melioz Vector.svg"
-                        className="absolute inset-0 m-auto w-40 opacity-[0.04]"
+                        className="absolute inset-0 m-auto w-32 md:w-40 opacity-[0.04]"
                         aria-hidden="true"
                         style={{ filter: 'brightness(0) invert(1)' }}
                       />

@@ -33,8 +33,8 @@ export default function Footer() {
         />
       </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
           {/* Col 1 — Marque */}
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="/" className="inline-block mb-4">
@@ -109,14 +109,17 @@ export default function Footer() {
             viewport={{ once: true, margin: '-20px' }}
             transition={{ duration: 1, ease: 'easeOut' }}
           />
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-            <p className="font-body text-xs text-melioz-offwhite/30">© 2026 Melioz. Tous droits réservés.</p>
-            <div className="flex gap-4">
-              {legalLinks.map((link) => (
-                <a key={link.label} href={link.href} className="font-body text-xs text-melioz-offwhite/30 hover:text-melioz-offwhite/60 transition-colors">
-                  {link.label}
-                </a>
-              ))}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p className="font-body text-xs text-melioz-offwhite/30">© {new Date().getFullYear()} MELIOZ. Tous droits réservés.</p>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex gap-4">
+                {legalLinks.map((link) => (
+                  <a key={link.label} href={link.href} className="font-body text-xs text-melioz-offwhite/30 hover:text-melioz-offwhite/60 transition-colors">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+              <span className="font-body text-xs text-melioz-offwhite/20">Fait avec soin à Montesson (78)</span>
             </div>
           </div>
         </div>

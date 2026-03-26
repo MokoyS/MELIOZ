@@ -50,22 +50,25 @@ export default function BookACall() {
       <Navbar />
       <main>
         {/* Hero — teal */}
-        <section className="relative bg-melioz-teal pt-20 overflow-hidden">
+        <section className="relative bg-melioz-teal pt-16 md:pt-20 overflow-hidden">
           <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
             <img
               src="/images/Melioz Vector.svg"
-              className="w-[400px] opacity-[0.05]"
+              className="w-[300px] md:w-[400px] opacity-[0.05]"
               aria-hidden="true"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
           </motion.div>
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-24">
+          <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 py-16 md:py-24">
             <AnimatedSection>
-              <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">Réservation</p>
-              <h1 className="font-display font-extrabold text-[64px] sm:text-[80px] leading-[0.9] tracking-[-0.04em] text-melioz-offwhite mb-6 max-w-2xl">
+              <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">Réservation</p>
+              <h1
+                className="font-display font-extrabold leading-[0.9] tracking-[-0.04em] text-melioz-offwhite mb-5 md:mb-6 max-w-2xl"
+                style={{ fontSize: 'clamp(36px, 7vw, 80px)' }}
+              >
                 Discutons de votre vision
               </h1>
-              <p className="font-body text-[18px] text-melioz-offwhite/70 max-w-xl leading-relaxed">
+              <p className="font-body text-[15px] md:text-[18px] text-melioz-offwhite/70 max-w-xl leading-relaxed">
                 Réservez un appel de 15 minutes pour échanger sur votre projet et découvrir comment nous pouvons vous accompagner.
               </p>
             </AnimatedSection>
@@ -73,27 +76,27 @@ export default function BookACall() {
         </section>
 
         {/* Formulaire Tally / Calendrier — offwhite */}
-        <section className="py-20 bg-melioz-offwhite">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <section className="py-16 md:py-20 bg-melioz-offwhite">
+          <div className="max-w-4xl mx-auto px-5 sm:px-6">
             {!showCalendar ? (
               /* Formulaire Tally */
               <AnimatedSection>
                 <div className="bg-white border border-melioz-navy/10 rounded-2xl overflow-hidden">
-                  <div className="p-8 sm:p-10 pb-6 border-b border-melioz-navy/10">
+                  <div className="p-6 sm:p-8 md:p-10 pb-6 border-b border-melioz-navy/10">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2.5 bg-melioz-electric/10 rounded-xl">
                         <CheckCircle2 className="w-5 h-5 text-melioz-electric" />
                       </div>
-                      <h2 className="font-display font-bold text-[24px] text-melioz-navy">
+                      <h2 className="font-display font-bold text-[20px] md:text-[24px] text-melioz-navy">
                         Quelques questions rapides
                       </h2>
                     </div>
-                    <p className="font-body text-melioz-navy/70">
+                    <p className="font-body text-[15px] md:text-[17px] text-melioz-navy/70">
                       Pour mieux comprendre vos besoins et vous proposer la meilleure solution.
                     </p>
                   </div>
 
-                  <div className="w-full relative px-6 sm:px-8" style={{ height: '700px', overflow: 'hidden' }}>
+                  <div className="w-full relative px-4 sm:px-6 md:px-8" style={{ height: '700px', overflow: 'hidden' }}>
                     <iframe
                       src="https://tally.so/embed/LZpNJG?hideTitle=1&transparentBackground=1&alignLeft=1"
                       width="100%"
@@ -111,7 +114,7 @@ export default function BookACall() {
                     />
                   </div>
 
-                  <div className="p-8 sm:p-10 pt-6 border-t border-melioz-navy/10">
+                  <div className="p-6 sm:p-8 md:p-10 pt-6 border-t border-melioz-navy/10">
                     <p className="font-body text-sm text-melioz-navy/50 text-center">
                       Après avoir rempli le formulaire, vous serez redirigé vers notre calendrier de réservation.
                     </p>
@@ -121,16 +124,16 @@ export default function BookACall() {
             ) : (
               /* Calendrier Cal.com */
               <AnimatedSection>
-                <div className="bg-white border border-melioz-navy/10 rounded-2xl p-8 sm:p-10">
+                <div className="bg-white border border-melioz-navy/10 rounded-2xl p-6 sm:p-8 md:p-10">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2.5 bg-melioz-electric/10 rounded-xl">
                       <Calendar className="w-5 h-5 text-melioz-electric" />
                     </div>
-                    <h2 className="font-display font-bold text-[24px] text-melioz-navy">
+                    <h2 className="font-display font-bold text-[20px] md:text-[24px] text-melioz-navy">
                       Choisissez un créneau
                     </h2>
                   </div>
-                  <p className="font-body text-melioz-navy/70 mb-8">
+                  <p className="font-body text-[15px] md:text-[17px] text-melioz-navy/70 mb-6 md:mb-8">
                     Sélectionnez le créneau qui vous convient le mieux pour notre appel de 15 minutes.
                   </p>
                   {/* NOTE: Placeholder intentionnel — Cal.com non encore configuré.

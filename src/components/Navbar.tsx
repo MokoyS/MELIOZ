@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from '../lib/framer-motion';
 
 interface NavbarProps {
@@ -104,61 +103,79 @@ export default function Navbar({ light = false }: NavbarProps) {
           Démarrer un projet
         </a>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — animated spans */}
         <button
           type="button"
-          onClick={() => setIsMenuOpen((p) => !p)}
+          onClick={() => setIsMenuOpen(p => !p)}
           aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          className={`md:hidden p-2 ${light && !scrolled ? 'text-melioz-navy' : 'text-melioz-offwhite'}`}
+          className="md:hidden z-[60] flex flex-col gap-1.5 p-2 relative"
         >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <span className={`block w-6 h-px transition-all duration-300 origin-center ${
+            isMenuOpen
+              ? 'rotate-45 translate-y-[7px] bg-melioz-offwhite'
+              : (light && !scrolled ? 'bg-melioz-navy' : 'bg-melioz-offwhite')
+          }`} />
+          <span className={`block w-6 h-px transition-all duration-300 ${
+            isMenuOpen
+              ? 'opacity-0 scale-x-0 bg-melioz-offwhite'
+              : (light && !scrolled ? 'bg-melioz-navy' : 'bg-melioz-offwhite')
+          }`} />
+          <span className={`block w-6 h-px transition-all duration-300 origin-center ${
+            isMenuOpen
+              ? '-rotate-45 -translate-y-[7px] bg-melioz-offwhite'
+              : (light && !scrolled ? 'bg-melioz-navy' : 'bg-melioz-offwhite')
+          }`} />
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            <motion.div
-              key="overlay"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-melioz-navy/60 md:hidden"
+      {/* Mobile overlay — fullscreen, CSS transition, z-50 */}
+      <div
+        id="mobile-menu"
+        className={`
+          fixed inset-0 z-50 bg-melioz-navy
+          flex flex-col items-center justify-center
+          md:hidden
+          transition-all duration-300 ease-in-out
+          ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+        `}
+      >
+        <nav className="flex flex-col items-center gap-6">
+          {navLinks.map((link, i) => (
+            <a
+              key={link.label}
+              href={link.href}
+              aria-current={currentPath === link.href ? 'page' : undefined}
               onClick={() => setIsMenuOpen(false)}
-            />
-            <motion.div
-              key="menu"
-              id="mobile-menu"
-              initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="fixed left-0 right-0 top-16 z-50 md:hidden bg-melioz-navy border-t border-melioz-offwhite/10 px-4 py-6"
+              className="font-display font-bold text-melioz-offwhite hover:text-melioz-electric transition-all duration-200"
+              style={{
+                fontSize: 'clamp(32px, 6vw, 48px)',
+                transitionDelay: isMenuOpen ? `${i * 50}ms` : '0ms',
+                transform: isMenuOpen ? 'translateY(0)' : 'translateY(16px)',
+                opacity: isMenuOpen ? 1 : 0,
+                transition: `all 0.3s ease ${i * 50}ms`,
+              }}
             >
-              <div className="flex flex-col gap-1 mb-6">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    aria-current={currentPath === link.href ? 'page' : undefined}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="px-3 py-3 font-body text-[11px] uppercase tracking-widest text-melioz-offwhite/70 hover:text-melioz-offwhite rounded-lg hover:bg-melioz-offwhite/5 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-              <a
-                href="/book-a-call"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-center px-4 py-3 bg-melioz-electric text-melioz-offwhite font-body text-sm font-medium rounded-xl"
-              >
-                Démarrer un projet
-              </a>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="/book-a-call"
+            onClick={() => setIsMenuOpen(false)}
+            className="mt-6 bg-melioz-electric text-melioz-offwhite font-body font-semibold
+              px-8 py-4 rounded-xl text-lg hover:bg-melioz-electric/90 transition-colors"
+            style={{
+              transitionDelay: isMenuOpen ? `${navLinks.length * 50}ms` : '0ms',
+              transform: isMenuOpen ? 'translateY(0)' : 'translateY(16px)',
+              opacity: isMenuOpen ? 1 : 0,
+              transition: `all 0.3s ease ${navLinks.length * 50}ms`,
+            }}
+          >
+            Démarrer un projet →
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }

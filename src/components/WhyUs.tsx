@@ -23,21 +23,24 @@ export default function WhyUs() {
   const mY = useTransform(mScrollY, [0, 1], [45, -45]);
 
   return (
-    <section className="py-32 bg-melioz-mint">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-16 md:py-24 lg:py-32 bg-melioz-mint overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-8">
         <AnimatedSection className="mb-16">
           <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-navy/60 mb-4">
             Pourquoi nous
           </p>
-          <h2 className="font-display font-bold text-[48px] md:text-[64px] leading-[1.0] tracking-[-0.02em] text-melioz-navy">
+          <h2
+            className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-navy"
+            style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
+          >
             L'exigence au service de votre croissance.
           </h2>
         </AnimatedSection>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {reasons.map((reason, i) => (
             <AnimatedSection key={reason.title} delay={i * 0.08}>
-              <div className="relative group p-7 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl hover:border-melioz-electric hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
+              <div className="relative group p-6 md:p-8 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl hover:border-melioz-electric hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
                 <motion.div ref={mRef} style={{ y: mY }} className="absolute top-3 right-3 pointer-events-none select-none">
                   <img src="/images/Melioz Vector.svg" className="w-12 opacity-[0.15]" aria-hidden="true" />
                 </motion.div>

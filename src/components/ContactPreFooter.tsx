@@ -3,16 +3,19 @@ import AnimatedSection from './AnimatedSection';
 
 export default function ContactPreFooter() {
   return (
-    <section className="py-32 bg-melioz-lavender/40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+    <section className="py-16 md:py-24 lg:py-32 bg-melioz-lavender/40 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Texte */}
           <AnimatedSection>
             <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">
               Contactez-nous
             </p>
-            <h2 className="font-display font-bold text-[48px] md:text-[56px] leading-[1.0] tracking-[-0.02em] text-melioz-navy mb-6">
+            <h2
+              className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-navy mb-6"
+              style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
+            >
               Contactez-nous dès aujourd'hui
             </h2>
             <p className="font-body text-[17px] leading-[1.7] text-melioz-navy/70 mb-8">
@@ -20,7 +23,7 @@ export default function ContactPreFooter() {
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
             >
               Nous contacter
               <ArrowRight className="w-4 h-4" />
