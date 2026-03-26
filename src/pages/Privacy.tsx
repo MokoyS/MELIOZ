@@ -4,8 +4,8 @@ import SEO from '../components/SEO';
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <SEO 
+    <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
+      <SEO
         title="MELIOZ - Politique de Confidentialité"
         description="Politique de confidentialité de l'agence MELIOZ. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD."
         canonical="/privacy"
@@ -14,15 +14,15 @@ export default function Privacy() {
       <main className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
-            <span className="inline-block px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-full text-secondary font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-2 bg-melioz-mint border border-melioz-navy/10 rounded-lg text-melioz-navy font-body text-[11px] uppercase tracking-widest mb-4">
               RGPD
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-text mb-6 font-display">
+            <h1 className="text-4xl sm:text-5xl text-melioz-navy font-display font-extrabold mb-6">
               Politique de Confidentialité
             </h1>
           </div>
 
-          <div className="space-y-10 text-text/80 leading-relaxed">
+          <div className="space-y-10 text-melioz-navy/70 font-body leading-relaxed">
             {/* Introduction */}
             <section>
               <p className="text-lg">
@@ -32,33 +32,33 @@ export default function Privacy() {
 
             {/* Responsable du traitement */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Responsable du traitement
               </h2>
               <div className="space-y-2">
-                <p><strong className="text-text">Responsable :</strong> Agence MELIOZ</p>
-                <p><strong className="text-text">Adresse :</strong> Paris, France</p>
-                <p><strong className="text-text">Email :</strong> <a href="mailto:contact@agencemelioz.com" className="text-primary hover:underline">contact@agencemelioz.com</a></p>
+                <p><strong className="text-melioz-navy">Responsable :</strong> Agence MELIOZ</p>
+                <p><strong className="text-melioz-navy">Adresse :</strong> Paris, France</p>
+                <p><strong className="text-melioz-navy">Email :</strong> <a href="mailto:contact@agencemelioz.com" className="text-melioz-electric hover:underline">contact@agencemelioz.com</a></p>
               </div>
             </section>
 
             {/* Données collectées */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Données collectées
               </h2>
               <p className="mb-4">
                 Nous collectons uniquement les données que vous nous transmettez volontairement via nos formulaires :
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong className="text-text">Formulaire de contact :</strong> Nom, prénom, adresse email, sujet et message</li>
-                <li><strong className="text-text">Formulaire de devis :</strong> Nom, prénom, adresse email, nom de l'entreprise, type de projet, budget estimé et description du projet</li>
+                <li><strong className="text-melioz-navy">Formulaire de contact :</strong> Nom, prénom, adresse email, sujet et message</li>
+                <li><strong className="text-melioz-navy">Formulaire de devis :</strong> Nom, prénom, adresse email, nom de l'entreprise, type de projet, budget estimé et description du projet</li>
               </ul>
             </section>
 
             {/* Finalité du traitement */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Finalité du traitement
               </h2>
               <p className="mb-4">
@@ -74,27 +74,27 @@ export default function Privacy() {
 
             {/* Base légale */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Base légale du traitement
               </h2>
               <p>
-                Le traitement de vos données repose sur votre <strong className="text-text">consentement</strong> (Article 6.1.a du RGPD), exprimé lors de la soumission de nos formulaires, ainsi que sur notre <strong className="text-text">intérêt légitime</strong> (Article 6.1.f du RGPD) à répondre à vos demandes commerciales.
+                Le traitement de vos données repose sur votre <strong className="text-melioz-navy">consentement</strong> (Article 6.1.a du RGPD), exprimé lors de la soumission de nos formulaires, ainsi que sur notre <strong className="text-melioz-navy">intérêt légitime</strong> (Article 6.1.f du RGPD) à répondre à vos demandes commerciales.
               </p>
             </section>
 
             {/* Durée de conservation */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Durée de conservation
               </h2>
               <p>
-                Vos données personnelles sont conservées pendant une durée maximale de <strong className="text-text">3 ans</strong> à compter de votre dernier contact avec nous. Au-delà de cette période, vos données seront supprimées ou anonymisées.
+                Vos données personnelles sont conservées pendant une durée maximale de <strong className="text-melioz-navy">3 ans</strong> à compter de votre dernier contact avec nous. Au-delà de cette période, vos données seront supprimées ou anonymisées.
               </p>
             </section>
 
             {/* Destinataires des données */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Destinataires des données
               </h2>
               <p className="mb-4">
@@ -107,28 +107,28 @@ export default function Privacy() {
 
             {/* Vos droits */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Vos droits
               </h2>
               <p className="mb-4">
                 Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong className="text-text">Droit d'accès :</strong> Obtenir la confirmation que vos données sont traitées et en recevoir une copie</li>
-                <li><strong className="text-text">Droit de rectification :</strong> Faire corriger vos données inexactes ou incomplètes</li>
-                <li><strong className="text-text">Droit à l'effacement :</strong> Demander la suppression de vos données</li>
-                <li><strong className="text-text">Droit à la limitation :</strong> Demander la limitation du traitement de vos données</li>
-                <li><strong className="text-text">Droit à la portabilité :</strong> Recevoir vos données dans un format structuré et lisible</li>
-                <li><strong className="text-text">Droit d'opposition :</strong> Vous opposer au traitement de vos données</li>
+                <li><strong className="text-melioz-navy">Droit d'accès :</strong> Obtenir la confirmation que vos données sont traitées et en recevoir une copie</li>
+                <li><strong className="text-melioz-navy">Droit de rectification :</strong> Faire corriger vos données inexactes ou incomplètes</li>
+                <li><strong className="text-melioz-navy">Droit à l'effacement :</strong> Demander la suppression de vos données</li>
+                <li><strong className="text-melioz-navy">Droit à la limitation :</strong> Demander la limitation du traitement de vos données</li>
+                <li><strong className="text-melioz-navy">Droit à la portabilité :</strong> Recevoir vos données dans un format structuré et lisible</li>
+                <li><strong className="text-melioz-navy">Droit d'opposition :</strong> Vous opposer au traitement de vos données</li>
               </ul>
               <p className="mt-4">
-                Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@agencemelioz.com" className="text-primary hover:underline font-semibold">contact@agencemelioz.com</a>
+                Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@agencemelioz.com" className="text-melioz-electric hover:text-melioz-electric hover:underline font-semibold">contact@agencemelioz.com</a>
               </p>
             </section>
 
             {/* Cookies */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Cookies
               </h2>
               <p className="mb-4">
@@ -141,7 +141,7 @@ export default function Privacy() {
 
             {/* Sécurité */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Sécurité des données
               </h2>
               <p>
@@ -151,17 +151,17 @@ export default function Privacy() {
 
             {/* Réclamation */}
             <section>
-              <h2 className="text-2xl font-semibold text-text mb-4 font-display">
+              <h2 className="text-2xl font-semibold text-melioz-navy mb-4 font-display">
                 Réclamation
               </h2>
               <p>
-                Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, vous avez le droit d'introduire une réclamation auprès de la <strong className="text-text">CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.cnil.fr</a>
+                Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, vous avez le droit d'introduire une réclamation auprès de la <strong className="text-melioz-navy">CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-melioz-electric hover:underline">www.cnil.fr</a>
               </p>
             </section>
 
             {/* Date de mise à jour */}
             <section className="pt-6 border-t border-secondary/20">
-              <p className="text-sm text-text/60">
+              <p className="text-sm text-melioz-navy/70 font-body">
                 Dernière mise à jour : Janvier 2026
               </p>
             </section>

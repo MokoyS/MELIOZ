@@ -8,7 +8,7 @@ export default function PlanSite() {
     {
       title: 'Pages principales',
       icon: Home,
-      color: 'text-primary',
+      color: 'text-melioz-electric',
       bgColor: 'bg-primary/10',
       links: [
         { label: 'Accueil', href: '/', description: 'Page d\'accueil de l\'agence MELIOZ' },
@@ -39,8 +39,8 @@ export default function PlanSite() {
     {
       title: 'Informations légales',
       icon: Shield,
-      color: 'text-text/70',
-      bgColor: 'bg-text/10',
+      color: 'text-melioz-navy/70',
+      bgColor: 'bg-melioz-navy/10',
       links: [
         { label: 'Mentions légales', href: '/mentions-legales', description: 'Informations sur l\'éditeur du site' },
         { label: 'Politique de confidentialité', href: '/privacy', description: 'Protection de vos données (RGPD)' },
@@ -50,8 +50,8 @@ export default function PlanSite() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-text">
-      <SEO 
+    <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
+      <SEO
         title="MELIOZ - Plan du site"
         description="Plan du site de l'agence MELIOZ. Retrouvez toutes les pages de notre site : services, expertise, réalisations, contact et informations légales."
         canonical="/plan-du-site"
@@ -63,14 +63,14 @@ export default function PlanSite() {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2.5 bg-primary/10 rounded-xl">
-                <Map className="w-5 h-5 text-primary" />
+                <Map className="w-5 h-5 text-melioz-electric" />
               </div>
-              <span className="text-primary font-semibold text-sm">Navigation</span>
+              <span className="text-melioz-electric font-semibold text-sm">Navigation</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-text mb-4 font-display">
+            <h1 className="text-4xl sm:text-5xl text-melioz-navy font-display font-extrabold mb-4">
               Plan du site
             </h1>
-            <p className="text-lg text-text/70">
+            <p className="text-lg text-melioz-navy/70 font-body">
               Retrouvez l'ensemble des pages du site MELIOZ pour naviguer facilement.
             </p>
           </div>
@@ -80,14 +80,14 @@ export default function PlanSite() {
             {sections.map((section) => (
               <div
                 key={section.title}
-                className="p-6 bg-background border border-secondary/20 rounded-2xl shadow-soft"
+                className="p-6 bg-melioz-offwhite border border-secondary/20 rounded-2xl shadow-soft"
               >
                 {/* Section Header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`p-2.5 ${section.bgColor} rounded-xl`}>
                     <section.icon className={`w-5 h-5 ${section.color}`} />
                   </div>
-                  <h2 className="text-xl font-semibold text-text font-display">
+                  <h2 className="text-xl font-semibold text-melioz-navy font-display">
                     {section.title}
                   </h2>
                 </div>
@@ -100,12 +100,12 @@ export default function PlanSite() {
                         href={link.href}
                         className="group flex items-start gap-3 p-3 -mx-3 rounded-xl hover:bg-primary/5 transition-colors"
                       >
-                        <ArrowRight className="w-4 h-4 text-primary mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <ArrowRight className="w-4 h-4 text-melioz-electric mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="flex-1">
-                          <span className="block font-medium text-text group-hover:text-primary transition-colors">
+                          <span className="block font-medium text-melioz-navy group-hover:text-melioz-electric transition-colors">
                             {link.label}
                           </span>
-                          <span className="text-sm text-text/60">
+                          <span className="text-sm text-melioz-navy/70 font-body">
                             {link.description}
                           </span>
                         </div>
@@ -119,13 +119,13 @@ export default function PlanSite() {
 
           {/* Sitemap XML Link - Accessible mais discret */}
           <div className="mt-12 pt-6 border-t border-secondary/20">
-            <div className="flex items-center justify-center gap-2 text-xs text-text/40">
+            <div className="flex items-center justify-center gap-2 text-xs text-melioz-navy/40">
               <FileText className="w-3 h-3" />
               <a
                 href="/sitemap.xml"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-text/60 transition-colors"
+                className="hover:text-melioz-navy/60 transition-colors"
               >
                 sitemap.xml
               </a>

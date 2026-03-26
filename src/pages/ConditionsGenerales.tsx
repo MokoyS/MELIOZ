@@ -4,8 +4,8 @@ import SEO from '../components/SEO';
 
 export default function ConditionsGenerales() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <SEO 
+    <div className="min-h-screen bg-melioz-offwhite text-melioz-navy">
+      <SEO
         title="MELIOZ - Conditions Générales"
         description="Conditions générales d'utilisation et de vente de l'agence MELIOZ. Modalités de paiement, transfert de propriété et règles d'utilisation du site agencemelioz.com."
         canonical="/conditions-generales"
@@ -14,36 +14,36 @@ export default function ConditionsGenerales() {
       <main className="pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
-            <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-2 bg-melioz-mint border border-melioz-navy/10 rounded-lg text-melioz-navy font-body text-[11px] uppercase tracking-widest mb-4">
               Informations légales
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-text mb-6 font-display">
+            <h1 className="text-4xl sm:text-5xl text-melioz-navy font-display font-extrabold mb-6">
               Conditions Générales
             </h1>
-            <p className="text-lg text-text/70 font-sans">
+            <p className="text-lg text-melioz-navy/70 font-body font-sans">
               Conditions Générales d'Utilisation (CGU) et Conditions Générales de Vente (CGV)
             </p>
           </div>
 
-          <div className="space-y-12 text-text/80 leading-relaxed font-sans">
+          <div className="space-y-12 text-melioz-navy/70 font-body leading-relaxed font-sans">
             {/* PARTIE 1 : CGU */}
             <section className="bg-white/50 border border-secondary/10 rounded-[24px] p-8 sm:p-10">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-text mb-4 font-display">
+                <h2 className="text-3xl font-bold text-melioz-navy mb-4 font-display">
                   PARTIE 1 : Conditions Générales d'Utilisation (CGU)
                 </h2>
-                <p className="text-text/70">
-                  Les présentes Conditions Générales d'Utilisation régissent l'accès et l'utilisation du site <strong className="text-text">agencemelioz.com</strong>.
+                <p className="text-melioz-navy/70">
+                  Les présentes Conditions Générales d'Utilisation régissent l'accès et l'utilisation du site <strong className="text-melioz-navy">agencemelioz.com</strong>.
                 </p>
               </div>
 
               {/* Article 1 : Objet */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 1 - Objet
                 </h3>
                 <p className="mb-4">
-                  Les présentes Conditions Générales d'Utilisation (ci-après "CGU") ont pour objet de définir les conditions d'accès et d'utilisation du site internet <strong className="text-text">agencemelioz.com</strong> (ci-après le "Site") édité par l'Agence MELIOZ.
+                  Les présentes Conditions Générales d'Utilisation (ci-après "CGU") ont pour objet de définir les conditions d'accès et d'utilisation du site internet <strong className="text-melioz-navy">agencemelioz.com</strong> (ci-après le "Site") édité par l'Agence MELIOZ.
                 </p>
                 <p>
                   L'accès et l'utilisation du Site impliquent l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas ces conditions, nous vous invitons à ne pas utiliser le Site.
@@ -52,27 +52,27 @@ export default function ConditionsGenerales() {
 
               {/* Article 2 : Propriété Intellectuelle */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 2 - Propriété Intellectuelle
                 </h3>
                 <p className="mb-4">
-                  L'ensemble du contenu du Site, incluant mais sans s'y limiter : les textes, images, vidéos, logos, icônes, graphismes, designs, codes sources, bases de données, marques, et tout autre élément (ci-après le "Contenu"), est la <strong className="text-text">propriété exclusive de l'Agence MELIOZ</strong> ou de ses partenaires.
+                  L'ensemble du contenu du Site, incluant mais sans s'y limiter : les textes, images, vidéos, logos, icônes, graphismes, designs, codes sources, bases de données, marques, et tout autre élément (ci-après le "Contenu"), est la <strong className="text-melioz-navy">propriété exclusive de l'Agence MELIOZ</strong> ou de ses partenaires.
                 </p>
                 <p className="mb-4">
                   Le Contenu est protégé par les lois françaises et internationales relatives à la propriété intellectuelle, notamment le Code de la Propriété Intellectuelle.
                 </p>
                 <p>
-                  Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du Site, quel que soit le moyen ou le procédé utilisé, est <strong className="text-text">strictement interdite</strong> sans l'autorisation écrite préalable de l'Agence MELIOZ.
+                  Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du Site, quel que soit le moyen ou le procédé utilisé, est <strong className="text-melioz-navy">strictement interdite</strong> sans l'autorisation écrite préalable de l'Agence MELIOZ.
                 </p>
               </div>
 
               {/* Article 3 : Responsabilité */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 3 - Responsabilité et Disponibilité du Service
                 </h3>
                 <p className="mb-4">
-                  L'Agence MELIOZ s'efforce d'assurer une disponibilité continue du Site. Toutefois, <strong className="text-text">l'Agence MELIOZ ne peut être tenue responsable</strong> des interruptions de service, de la perte de données, ou de tout dysfonctionnement résultant :
+                  L'Agence MELIOZ s'efforce d'assurer une disponibilité continue du Site. Toutefois, <strong className="text-melioz-navy">l'Agence MELIOZ ne peut être tenue responsable</strong> des interruptions de service, de la perte de données, ou de tout dysfonctionnement résultant :
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
                   <li>D'une interruption ou d'une indisponibilité du service liée à l'hébergeur (Vercel Inc.)</li>
@@ -87,7 +87,7 @@ export default function ConditionsGenerales() {
 
               {/* Article 4 : Utilisation du Site */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 4 - Utilisation du Site
                 </h3>
                 <p className="mb-4">
@@ -103,7 +103,7 @@ export default function ConditionsGenerales() {
 
               {/* Article 5 : Droit applicable */}
               <div>
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 5 - Droit applicable et Juridiction
                 </h3>
                 <p>
@@ -115,17 +115,17 @@ export default function ConditionsGenerales() {
             {/* PARTIE 2 : CGV */}
             <section className="bg-white/50 border border-secondary/10 rounded-[24px] p-8 sm:p-10">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-text mb-4 font-display">
+                <h2 className="text-3xl font-bold text-melioz-navy mb-4 font-display">
                   PARTIE 2 : Conditions Générales de Vente (CGV)
                 </h2>
-                <p className="text-text/70">
+                <p className="text-melioz-navy/70">
                   Les présentes Conditions Générales de Vente régissent les prestations de services proposées par l'Agence MELIOZ.
                 </p>
               </div>
 
               {/* Article 1 : Objet */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 1 - Objet et Champ d'Application
                 </h3>
                 <p className="mb-4">
@@ -141,14 +141,14 @@ export default function ConditionsGenerales() {
 
               {/* Article 2 : Tarifs */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 2 - Tarifs et Devis
                 </h3>
                 <p className="mb-4">
-                  Les tarifs des prestations sont exprimés en <strong className="text-text">Euros Hors Taxes (HT)</strong>. La TVA est ajoutée conformément à la législation en vigueur.
+                  Les tarifs des prestations sont exprimés en <strong className="text-melioz-navy">Euros Hors Taxes (HT)</strong>. La TVA est ajoutée conformément à la législation en vigueur.
                 </p>
                 <p className="mb-4">
-                  Tout devis établi par l'Agence MELIOZ est valable pour une durée de <strong className="text-text">30 jours calendaires</strong> à compter de sa date d'émission. Passé ce délai, le devis devient caduc et doit être renouvelé.
+                  Tout devis établi par l'Agence MELIOZ est valable pour une durée de <strong className="text-melioz-navy">30 jours calendaires</strong> à compter de sa date d'émission. Passé ce délai, le devis devient caduc et doit être renouvelé.
                 </p>
                 <p>
                   Les tarifs peuvent être modifiés à tout moment sans préavis, mais restent fermes pour toute commande acceptée par l'Agence MELIOZ.
@@ -157,18 +157,18 @@ export default function ConditionsGenerales() {
 
               {/* Article 3 : Paiements */}
               <div className="mb-8 bg-accent/5 border border-accent/20 rounded-[24px] p-6">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 3 - Modalités de Paiement
                 </h3>
                 <p className="mb-4">
-                  Les paiements s'effectuent via la plateforme <strong className="text-text">Shine</strong> selon les modalités suivantes :
+                  Les paiements s'effectuent via la plateforme <strong className="text-melioz-navy">Shine</strong> selon les modalités suivantes :
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
-                  <li><strong className="text-text">Acompte de 30%</strong> à la commande, payable à la signature du devis ou du bon de commande</li>
-                  <li><strong className="text-text">Solde de 70%</strong> à la livraison et réception de la prestation</li>
+                  <li><strong className="text-melioz-navy">Acompte de 30%</strong> à la commande, payable à la signature du devis ou du bon de commande</li>
+                  <li><strong className="text-melioz-navy">Solde de 70%</strong> à la livraison et réception de la prestation</li>
                 </ul>
                 <p className="mb-4">
-                  <strong className="text-text">Pénalités de retard :</strong> Conformément à la législation française (Loi n° 2012-387 du 22 mars 2012), tout retard de paiement entraîne de plein droit, sans mise en demeure préalable :
+                  <strong className="text-melioz-navy">Pénalités de retard :</strong> Conformément à la législation française (Loi n° 2012-387 du 22 mars 2012), tout retard de paiement entraîne de plein droit, sans mise en demeure préalable :
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>L'application d'intérêts de retard au taux légal en vigueur</li>
@@ -179,14 +179,14 @@ export default function ConditionsGenerales() {
 
               {/* Article 4 : Transfert de Propriété */}
               <div className="mb-8 bg-primary/10 border border-primary/30 rounded-[24px] p-6">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 4 - Transfert de Propriété et Droits d'Exploitation
                 </h3>
                 <p className="mb-4 text-lg">
-                  <strong className="text-text text-xl">⚠️ CLAUSE IMPORTANTE :</strong>
+                  <strong className="text-melioz-navy text-xl">⚠️ CLAUSE IMPORTANTE :</strong>
                 </p>
                 <p className="mb-4">
-                  Le client ne devient <strong className="text-text">propriétaire du site, du code source, des designs, et de tout élément livré</strong> qu'<strong className="text-text">après le règlement intégral et effectif de la facture finale</strong>, incluant le solde et tous les éventuels frais supplémentaires.
+                  Le client ne devient <strong className="text-melioz-navy">propriétaire du site, du code source, des designs, et de tout élément livré</strong> qu'<strong className="text-melioz-navy">après le règlement intégral et effectif de la facture finale</strong>, incluant le solde et tous les éventuels frais supplémentaires.
                 </p>
                 <p className="mb-4">
                   Jusqu'au paiement complet :
@@ -203,20 +203,20 @@ export default function ConditionsGenerales() {
 
               {/* Article 5 : Livraison */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 5 - Livraison et Réception
                 </h3>
                 <p className="mb-4">
                   La livraison de la prestation est effectuée selon les modalités convenues dans le devis ou le bon de commande. Les délais de livraison sont donnés à titre indicatif et ne sont pas garantis.
                 </p>
                 <p>
-                  Le client dispose d'un délai de <strong className="text-text">7 jours calendaires</strong> à compter de la livraison pour formuler des réserves écrites. Passé ce délai, la prestation est réputée acceptée.
+                  Le client dispose d'un délai de <strong className="text-melioz-navy">7 jours calendaires</strong> à compter de la livraison pour formuler des réserves écrites. Passé ce délai, la prestation est réputée acceptée.
                 </p>
               </div>
 
               {/* Article 6 : Résiliation */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 6 - Résiliation et Annulation
                 </h3>
                 <p className="mb-4">
@@ -234,11 +234,11 @@ export default function ConditionsGenerales() {
 
               {/* Article 7 : Garantie */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 7 - Garantie et Support
                 </h3>
                 <p className="mb-4">
-                  L'Agence MELIOZ garantit la conformité de ses prestations aux spécifications convenues dans le devis. Une garantie de <strong className="text-text">3 mois</strong> est accordée pour la correction des bugs et dysfonctionnements majeurs, à compter de la livraison finale.
+                  L'Agence MELIOZ garantit la conformité de ses prestations aux spécifications convenues dans le devis. Une garantie de <strong className="text-melioz-navy">3 mois</strong> est accordée pour la correction des bugs et dysfonctionnements majeurs, à compter de la livraison finale.
                 </p>
                 <p>
                   Cette garantie ne couvre pas les modifications demandées par le client, les évolutions fonctionnelles, ni les problèmes liés à des éléments extérieurs (hébergement, plugins tiers, etc.).
@@ -247,7 +247,7 @@ export default function ConditionsGenerales() {
 
               {/* Article 8 : Droit applicable */}
               <div>
-                <h3 className="text-xl font-semibold text-text mb-4 font-display">
+                <h3 className="text-xl font-semibold text-melioz-navy mb-4 font-display">
                   Article 8 - Droit applicable et Médiation
                 </h3>
                 <p className="mb-4">
@@ -261,11 +261,11 @@ export default function ConditionsGenerales() {
 
             {/* Date de mise à jour */}
             <section className="pt-6 border-t border-secondary/20">
-              <p className="text-sm text-text/60 font-sans">
+              <p className="text-sm text-melioz-navy/70 font-body font-sans">
                 Dernière mise à jour : Janvier 2026
               </p>
-              <p className="text-sm text-text/60 font-sans mt-2">
-                Pour toute question concernant ces conditions générales, contactez-nous à : <a href="mailto:contact@agencemelioz.com" className="text-primary hover:underline">contact@agencemelioz.com</a>
+              <p className="text-sm text-melioz-navy/70 font-body font-sans mt-2">
+                Pour toute question concernant ces conditions générales, contactez-nous à : <a href="mailto:contact@agencemelioz.com" className="text-melioz-electric hover:underline">contact@agencemelioz.com</a>
               </p>
             </section>
           </div>
