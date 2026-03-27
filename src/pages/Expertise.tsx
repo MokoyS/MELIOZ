@@ -241,7 +241,7 @@ export default function Expertise() {
       <Navbar />
       <main>
         {/* Hero — teal */}
-        <section className="relative bg-melioz-teal pt-16 md:pt-20 overflow-hidden">
+        <section className="relative bg-melioz-teal pt-28 md:pt-36 overflow-hidden">
           <motion.div ref={mRef} style={{ y: mY }} className="absolute right-0 top-[20%] pointer-events-none select-none">
             <img
               src="/images/Melioz Vector.svg"

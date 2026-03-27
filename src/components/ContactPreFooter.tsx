@@ -23,7 +23,7 @@ export default function ContactPreFooter() {
             </p>
             <a
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
             >
               Nous contacter
               <ArrowRight className="w-4 h-4" />

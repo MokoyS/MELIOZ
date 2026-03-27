@@ -9,83 +9,103 @@ export default function Hero() {
   const canRender3D = useCanRender3D();
 
   return (
-    <section className="relative min-h-screen bg-melioz-teal flex items-center overflow-hidden">
+    <section className="relative min-h-screen bg-melioz-teal overflow-hidden">
 
-      {/* Layout 2 colonnes : texte gauche + M 3D droite */}
-      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 w-full
-        grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-24 md:py-32">
+      {/* Grille unique : 1 col mobile/tablette, 2 cols desktop */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-5 md:px-8
+        grid grid-cols-1 lg:grid-cols-2 lg:gap-12 lg:items-center
+        pt-28 pb-10 md:pt-36 md:pb-4 lg:py-0 lg:min-h-screen">
 
-        {/* Colonne texte */}
+        {/* ── Colonne texte ── */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
         >
-          {/* Label */}
-          <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6 md:mb-8">
+          <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.14em] text-melioz-electric mb-5 md:mb-6">
             Agence Digitale · Paris
           </p>
 
-          {/* H1 */}
-          <h1 className="font-display font-extrabold leading-[0.9] tracking-[-0.04em] text-melioz-offwhite mb-10 max-w-xl" style={{ fontSize: 'clamp(40px, 6vw, 96px)' }}>
+          <h1
+            className="font-display font-extrabold leading-[0.9] tracking-[-0.04em] text-melioz-offwhite mb-6 md:mb-8"
+            style={{ fontSize: 'clamp(40px, 9vw, 96px)' }}
+          >
             L'expertise digitale à taille humaine.
           </h1>
 
-          {/* Sous-titre */}
-          <p className="font-body text-melioz-offwhite/70 max-w-md mb-12 leading-relaxed text-[16px] md:text-[18px]">
+          <p className="font-body text-melioz-offwhite/70 max-w-md mb-8 md:mb-10 leading-relaxed text-[15px] md:text-[17px]">
             Design soigné, code moderne, résultats mesurables. Nous transformons vos ambitions en présence digitale remarquable.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4">
             <a
               href="/book-a-call"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5
-                bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl
-                hover:-translate-y-0.5 transition-transform duration-200
-                w-full sm:w-auto text-center"
+                bg-melioz-electric text-melioz-offwhite font-body font-medium text-sm md:text-[15px] rounded-xl
+                hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
             >
               Démarrer un projet
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 flex-shrink-0" />
             </a>
             <a
               href="/realisations"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5
-                text-melioz-offwhite/80 font-body font-medium
-                hover:text-melioz-offwhite transition-colors duration-200
-                w-full sm:w-auto text-center
-                border border-melioz-offwhite/20 rounded-xl hover:border-melioz-offwhite/40"
+                text-melioz-offwhite/80 font-body font-medium text-sm md:text-[15px] rounded-xl
+                border border-melioz-offwhite/25 hover:border-melioz-offwhite/50
+                hover:text-melioz-offwhite transition-all duration-200 whitespace-nowrap"
             >
               Voir nos réalisations
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 flex-shrink-0" />
             </a>
           </div>
         </motion.div>
 
-        {/* Colonne M 3D — cachée sur mobile (affichée en dessous) */}
+        {/* ── M visuel ──
+            Mobile (< 768px)  : SVG statique, compact, sous les CTAs
+            Tablette (768px+) : 3D canvas, sous le texte
+            Desktop (1024px+) : 3D canvas, colonne droite
+        */}
         <motion.div
-          className="relative h-[340px] sm:h-[420px] lg:h-[560px] flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
+          className="flex items-center justify-center
+            h-[180px] md:h-[300px] lg:h-[560px]
+            mt-4 md:mt-4 lg:mt-0"
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: 'easeOut', delay: 0.25 }}
+          transition={{ duration: 1.1, ease: 'easeOut', delay: 0.3 }}
         >
-          {canRender3D ? (
-            <MeliozGlass3DLazy />
-          ) : (
-            /* Fallback SVG pour appareils bas de gamme */
+          {/* Mobile : SVG statique uniquement */}
+          <div className="flex md:hidden w-full h-full items-center justify-center">
             <svg
               viewBox="0 0 715 349"
               aria-hidden="true"
-              className="w-64 opacity-80 select-none pointer-events-none"
-              style={{ filter: 'drop-shadow(0 20px 40px rgba(32,79,86,0.5)) brightness(10)' }}
+              className="w-44 select-none pointer-events-none"
+              style={{ opacity: 0.15, filter: 'brightness(10)' }}
             >
               <path d={M_PATH} fill="white" />
             </svg>
-          )}
+          </div>
+
+          {/* Tablette+ : 3D */}
+          <div className="hidden md:block w-full h-full">
+            {canRender3D ? (
+              <MeliozGlass3DLazy />
+            ) : (
+              <div className="flex items-center justify-center w-full h-full">
+                <svg
+                  viewBox="0 0 715 349"
+                  aria-hidden="true"
+                  className="w-56 lg:w-72 select-none pointer-events-none"
+                  style={{ opacity: 0.2, filter: 'brightness(10)' }}
+                >
+                  <path d={M_PATH} fill="white" />
+                </svg>
+              </div>
+            )}
+          </div>
         </motion.div>
+
       </div>
-
-
     </section>
   );
 }

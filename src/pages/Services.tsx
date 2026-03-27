@@ -37,7 +37,7 @@ export default function Services() {
       <Navbar light />
       <main>
         {/* Hero — offwhite */}
-        <section className="pt-16 md:pt-20 pb-16 md:pb-24 bg-melioz-offwhite overflow-hidden">
+        <section className="pt-28 md:pt-36 pb-16 md:pb-24 bg-melioz-offwhite overflow-hidden">
           <div className="max-w-6xl mx-auto px-5 sm:px-6">
             <AnimatedSection>
               <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4 md:mb-6">Nos services</p>

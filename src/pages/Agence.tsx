@@ -31,7 +31,7 @@ export default function Agence() {
       <Navbar />
       <main>
         {/* Hero — teal */}
-        <section className="relative min-h-[60vh] bg-melioz-teal flex items-center overflow-hidden pt-16 md:pt-20">
+        <section className="relative min-h-[60vh] bg-melioz-teal flex items-center overflow-hidden pt-28 md:pt-36">
           <motion.div ref={mRef1} style={{ y: mY1 }} className="absolute right-0 top-[20%] pointer-events-none select-none">
             <img src="/images/Melioz Vector.svg" className="w-[300px] md:w-[500px] opacity-[0.05]" aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />
           </motion.div>

@@ -34,7 +34,7 @@ export default function Footer() {
       </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
           {/* Col 1 — Marque */}
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="/" className="inline-block mb-4">
@@ -64,9 +64,9 @@ export default function Footer() {
             <p className="font-body text-[11px] uppercase tracking-widest text-melioz-electric mb-4">Contact</p>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:contact@agencemelioz.com" className="flex items-center gap-2 font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
-                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
-                  contact@agencemelioz.com
+                <a href="mailto:contact@agencemelioz.com" className="flex items-start gap-2 font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+                  <span className="break-all">contact@agencemelioz.com</span>
                 </a>
               </li>
               <li>
