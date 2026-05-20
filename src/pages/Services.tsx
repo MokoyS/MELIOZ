@@ -59,8 +59,8 @@ export default function Services() {
           <div className="max-w-6xl mx-auto px-5 sm:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
               {services.map((service, i) => (
-                <AnimatedSection key={service.title} delay={i * 0.05}>
-                  <div className="p-6 md:p-7 rounded-2xl bg-melioz-offwhite/5 border border-melioz-offwhite/10 hover:border-melioz-electric/40 hover:-translate-y-0.5 transition-all duration-200">
+                <AnimatedSection key={service.title} delay={i * 0.05} className="h-full">
+                  <div className="h-full flex flex-col p-6 md:p-7 rounded-2xl bg-melioz-offwhite/5 border border-melioz-offwhite/10 hover:border-melioz-electric/40 hover:-translate-y-0.5 transition-all duration-200">
                     <div className="w-10 h-10 rounded-lg bg-melioz-electric/20 flex items-center justify-center mb-5">
                       <service.icon className="w-5 h-5 text-melioz-electric" />
                     </div>

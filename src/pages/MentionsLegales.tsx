@@ -29,11 +29,8 @@ export default function MentionsLegales() {
                 Éditeur du site
               </h2>
               <div className="space-y-2">
-                <p><strong className="text-melioz-navy">Raison sociale :</strong> Agence MELIOZ</p>
-                <p><strong className="text-melioz-navy">Forme juridique :</strong> SAS (Société par Actions Simplifiée)</p>
-                <p><strong className="text-melioz-navy">Capital social :</strong> 1 000 €</p>
-                <p><strong className="text-melioz-navy">Siège social :</strong> Paris, France</p>
-                <p><strong className="text-melioz-navy">SIRET :</strong> En cours d'immatriculation</p>
+                <p><strong className="text-melioz-navy">Raison sociale :</strong> Maxime lebas</p>
+                <p><strong className="text-melioz-navy">SIRET :</strong> 92450370900017</p>
                 <p><strong className="text-melioz-navy">Email :</strong> <a href="mailto:contact@agencemelioz.com" className="text-melioz-electric hover:underline">contact@agencemelioz.com</a></p>
               </div>
             </section>

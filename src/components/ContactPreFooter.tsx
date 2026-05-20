@@ -10,24 +10,25 @@ export default function ContactPreFooter() {
           {/* Texte */}
           <AnimatedSection>
             <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-6">
-              Contactez-nous
+              PRÊT À DÉMARRER ?
             </p>
             <h2
               className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-navy mb-6"
               style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
             >
-              Contactez-nous dès aujourd'hui
+              Votre projet mérite mieux.
             </h2>
             <p className="font-body text-[17px] leading-[1.7] text-melioz-navy/70 mb-8">
-              Un projet ? Une problématique ? Posez-nous vos questions et obtenez un regard expert sur votre stratégie actuelle.
+              Parlez-nous de votre idée. MELIOZ vous répond sous 24h.
             </p>
             <a
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-melioz-electric text-melioz-offwhite font-body font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200"
             >
-              Nous contacter
+              Démarrer maintenant
               <ArrowRight className="w-4 h-4" />
             </a>
+            <p className="font-body text-xs text-melioz-navy/40 mt-3">Pas d&#39;engagement. Premier échange gratuit.</p>
           </AnimatedSection>
 
           {/* Panneau visuel */}
@@ -35,7 +36,7 @@ export default function ContactPreFooter() {
             <div className="p-8 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl">
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-2 h-2 rounded-full bg-melioz-electric animate-pulse" />
-                <span className="font-body text-[11px] uppercase tracking-widest text-melioz-electric">Melioz — disponible</span>
+                <span className="font-body text-[11px] uppercase tracking-widest text-melioz-electric">MELIOZ — disponible</span>
               </div>
 
               <div className="space-y-3">

@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="min-h-screen bg-melioz-offwhite text-melioz-navy overflow-x-hidden">
       <SEO
-        title="MELIOZ — Agence Digitale Paris | Design, Dev & Stratégie"
-        description="Agence digitale à Paris spécialisée en design UX/UI, développement web et stratégie produit. MELIOZ transforme vos ambitions en présence digitale remarquable."
+        title="MELIOZ — Agence Digitale | Design, Dev & Stratégie"
+        description="Agence digitale spécialisée en design UX/UI, développement web et stratégie produit. MELIOZ transforme vos ambitions en présence digitale remarquable."
         canonical="/"
       />
       <Navbar />

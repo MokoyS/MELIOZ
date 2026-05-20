@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 
 const values = [
-  { label: 'Projets livrés', value: '50+' },
-  { label: 'Satisfaction client', value: '98%' },
-  { label: 'Années d\'expérience', value: '5+' },
+  { label: 'Délai moyen de livraison', value: '3 sem.' },
+  { label: 'Score Lighthouse moyen', value: '>90' },
+  { label: 'Propriété transférée', value: '100%' },
 ];
 
 export default function AboutSection() {
@@ -39,7 +39,7 @@ export default function AboutSection() {
               Créer, mesurer,<br />itérer.
             </h2>
             <p className="font-body text-[17px] text-melioz-offwhite/70 leading-relaxed mb-8 max-w-lg">
-              Nous sommes une agence à taille humaine qui croit en la rigueur, l'impact et la transparence. Chaque projet est une collaboration étroite avec nos clients, de la stratégie à la mise en ligne.
+              MELIOZ est une agence à taille humaine fondée à Paris. Chaque projet est une collaboration directe, sans intermédiaire, du cadrage à la mise en ligne.
             </p>
             <a
               href="/agence"

@@ -20,6 +20,7 @@ if (isDev) {
     { default: Agence },
     { default: Expertise },
     { default: Realisations },
+    { default: RealisationDetail },
     { default: Contact },
     { default: MentionsLegales },
     { default: Privacy },
@@ -35,6 +36,7 @@ if (isDev) {
     import('./pages/Agence.tsx'),
     import('./pages/Expertise.tsx'),
     import('./pages/Realisations.tsx'),
+    import('./pages/RealisationDetail.tsx'),
     import('./pages/Contact.tsx'),
     import('./pages/MentionsLegales.tsx'),
     import('./pages/Privacy.tsx'),
@@ -50,6 +52,10 @@ if (isDev) {
   const currentPath = normalizePath(window.location.pathname);
 
   const getComponent = () => {
+    if (currentPath.startsWith('/realisations/')) {
+      const slug = currentPath.slice('/realisations/'.length);
+      return <RealisationDetail slug={slug} />;
+    }
     switch (currentPath) {
       case '/services':
         return <Services />;
@@ -110,6 +116,7 @@ if (isDev) {
   const Agence = lazy(() => import('./pages/Agence.tsx'));
   const Expertise = lazy(() => import('./pages/Expertise.tsx'));
   const Realisations = lazy(() => import('./pages/Realisations.tsx'));
+  const RealisationDetail = lazy(() => import('./pages/RealisationDetail.tsx'));
   const Contact = lazy(() => import('./pages/Contact.tsx'));
   const MentionsLegales = lazy(() => import('./pages/MentionsLegales.tsx'));
   const Privacy = lazy(() => import('./pages/Privacy.tsx'));
@@ -123,6 +130,10 @@ if (isDev) {
   const currentPath = normalizePath(window.location.pathname);
 
   const getComponent = () => {
+    if (currentPath.startsWith('/realisations/')) {
+      const slug = currentPath.slice('/realisations/'.length);
+      return <RealisationDetail slug={slug} />;
+    }
     switch (currentPath) {
       case '/services':
         return <Services />;

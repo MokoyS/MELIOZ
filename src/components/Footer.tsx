@@ -119,7 +119,6 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
-              <span className="font-body text-xs text-melioz-offwhite/20">Fait avec soin à Montesson (78)</span>
             </div>
           </div>
         </div>

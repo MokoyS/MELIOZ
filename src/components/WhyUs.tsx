@@ -4,16 +4,20 @@ import AnimatedSection from './AnimatedSection';
 
 const reasons = [
   {
-    title: 'Expertise',
-    description: 'La rencontre entre l\'ingénierie web de pointe et la psychologie du marketing. Notre équipe maîtrise les outils de demain pour résoudre vos problématiques d\'aujourd\'hui.',
+    title: 'Livraison rapide.',
+    description: "On livre en 2 à 4 semaines — pas 4 mois. La vitesse d'exécution est notre premier engagement envers vous.",
   },
   {
-    title: 'Proximité',
-    description: 'La distance disparaît au profit de la réactivité. Avec un interlocuteur unique et un suivi en temps réel, vous êtes au cœur du projet.',
+    title: 'Stack moderne.',
+    description: 'Vite, React, Next.js, Supabase, IA intégrée. Des technologies qui durent et qui performent.',
   },
   {
-    title: 'Qualité',
-    description: 'Nous visons l\'excellence technique pour des solutions durables. La conception est optimisée pour offrir une expérience sans compromis, aujourd\'hui comme demain.',
+    title: 'Suivi transparent.',
+    description: "Un portail dédié, un interlocuteur unique, un avancement visible à tout moment. Aucune décision unilatérale.",
+  },
+  {
+    title: 'Rapport qualité/prix.',
+    description: "L'exigence d'une grande agence, l'agilité d'une petite structure. Pas de surcoût lié à l'overhead.",
   },
 ];
 
@@ -27,20 +31,20 @@ export default function WhyUs() {
       <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-8">
         <AnimatedSection className="mb-16">
           <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-navy/60 mb-4">
-            Pourquoi nous
+            NOS ENGAGEMENTS
           </p>
           <h2
             className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-navy"
             style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
           >
-            L'exigence au service de votre croissance.
+            Quatre raisons de choisir MELIOZ.
           </h2>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {reasons.map((reason, i) => (
-            <AnimatedSection key={reason.title} delay={i * 0.08}>
-              <div className="relative group p-6 md:p-8 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl hover:border-melioz-electric hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
+            <AnimatedSection key={reason.title} delay={i * 0.08} className="h-full">
+              <div className="relative group h-full p-6 md:p-8 bg-melioz-offwhite border border-melioz-navy/10 rounded-2xl hover:border-melioz-electric hover:-translate-y-0.5 transition-all duration-200 overflow-hidden flex flex-col">
                 <motion.div ref={mRef} style={{ y: mY }} className="absolute top-3 right-3 pointer-events-none select-none">
                   <img src="/images/Melioz Vector.svg" className="w-12 opacity-[0.15]" aria-hidden="true" />
                 </motion.div>

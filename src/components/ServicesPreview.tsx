@@ -6,8 +6,8 @@ import AnimatedSection from './AnimatedSection';
 const services = [
   {
     num: '01',
-    title: 'Ingénierie & Développement',
-    description: 'Sites vitrines et plateformes sur-mesure conçus pour la vitesse, la sécurité et l\'évolutivité. Une infrastructure solide pour soutenir votre croissance.',
+    title: 'Sites qui performent.',
+    description: 'Design sur mesure, code moderne, optimisation SEO dès le départ. Livré en 2 à 4 semaines, pas 4 mois.',
     bg: 'bg-melioz-teal',
     text: 'text-melioz-offwhite',
     mFilter: 'brightness(0) invert(1)',
@@ -15,8 +15,8 @@ const services = [
   },
   {
     num: '02',
-    title: 'Expérience & Identité Visuelle',
-    description: 'Des interfaces haute couture qui captent l\'attention et renforcent votre autorité. Parcours utilisateurs fluides dédiés à l\'engagement.',
+    title: 'Vos idées, en production.',
+    description: 'Du tableau blanc au produit fonctionnel. MELIOZ cadre, développe et livre votre MVP dans les délais — sans compromis techniques.',
     bg: 'bg-melioz-mint',
     text: 'text-melioz-navy',
     mFilter: 'brightness(0) saturate(100%) invert(23%) sepia(29%) saturate(634%) hue-rotate(145deg) brightness(93%) contrast(88%)',
@@ -24,8 +24,8 @@ const services = [
   },
   {
     num: '03',
-    title: 'Visibilité & Acquisition',
-    description: 'SEO, GEO & SEA. Nous pilotons vos leviers d\'acquisition et assurons un suivi analytique rigoureux pour optimiser continuellement vos performances.',
+    title: "L'expérience avant tout.",
+    description: "Interface pensée pour l'utilisateur, pas pour le portfolio. Chaque décision de design a une raison fonctionnelle.",
     bg: 'bg-melioz-navy',
     text: 'text-melioz-offwhite',
     mFilter: 'brightness(0) invert(1)',
@@ -43,14 +43,17 @@ export default function ServicesPreview() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
         <AnimatedSection className="mb-16">
           <p className="font-body font-medium text-[11px] uppercase tracking-[0.12em] text-melioz-electric mb-4">
-            Ce qu'on fait
+            CE QU'ON CONSTRUIT POUR VOUS
           </p>
           <h2
             className="font-display font-bold leading-[1.0] tracking-[-0.02em] text-melioz-navy"
             style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
           >
-            Nos solutions pour vos<br />enjeux digitaux.
+            De l'idée au produit fini.
           </h2>
+          <p className="font-body text-[17px] text-melioz-navy/60 mt-4 max-w-lg leading-relaxed">
+            MELIOZ intervient sur l&#39;ensemble du cycle digital : conception, développement, lancement.
+          </p>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
@@ -83,14 +86,6 @@ export default function ServicesPreview() {
                 <p className={`font-body text-[15px] leading-relaxed opacity-70 flex-1 ${service.text}`}>
                   {service.description}
                 </p>
-
-                {/* Lien */}
-                <a
-                  href="/services"
-                  className={`inline-flex items-center gap-1 font-body text-sm font-medium mt-4 ${service.linkColor} hover:gap-2 transition-all duration-200`}
-                >
-                  Découvrir <ArrowRight className="w-3.5 h-3.5" />
-                </a>
               </div>
             </AnimatedSection>
           ))}

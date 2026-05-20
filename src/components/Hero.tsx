@@ -9,21 +9,21 @@ export default function Hero() {
   const canRender3D = useCanRender3D();
 
   return (
-    <section className="relative min-h-screen bg-melioz-teal overflow-hidden">
+    <section className="relative min-h-screen bg-melioz-teal overflow-hidden flex flex-col justify-center">
 
-      {/* Grille unique : 1 col mobile/tablette, 2 cols desktop */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-5 md:px-8
-        grid grid-cols-1 lg:grid-cols-2 lg:gap-12 lg:items-center
-        pt-28 pb-10 md:pt-36 md:pb-4 lg:py-0 lg:min-h-screen">
+        flex flex-col lg:flex-row lg:items-center lg:gap-12
+        pt-28 pb-8 md:pt-36 md:pb-12 lg:py-16">
 
         {/* ── Colonne texte ── */}
         <motion.div
+          className="lg:flex-1"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: 'easeOut' }}
         >
-          <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.14em] text-melioz-electric mb-5 md:mb-6">
-            Agence Digitale · Paris
+          <p className="font-body font-medium text-[10px] md:text-[11px] uppercase tracking-[0.14em] text-melioz-offwhite mb-5 md:mb-6">
+            Agence Digitale
           </p>
 
           <h1
@@ -34,10 +34,9 @@ export default function Hero() {
           </h1>
 
           <p className="font-body text-melioz-offwhite/70 max-w-md mb-8 md:mb-10 leading-relaxed text-[15px] md:text-[17px]">
-            Design soigné, code moderne, résultats mesurables. Nous transformons vos ambitions en présence digitale remarquable.
+            MELIOZ conçoit et développe des expériences digitales qui performent. Stack moderne, suivi transparent, livraison en 3 semaines.
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-col md:flex-row gap-3 md:gap-4">
             <a
               href="/book-a-call"
@@ -55,53 +54,55 @@ export default function Hero() {
                 border border-melioz-offwhite/25 hover:border-melioz-offwhite/50
                 hover:text-melioz-offwhite transition-all duration-200 whitespace-nowrap"
             >
-              Voir nos réalisations
+              Voir les réalisations
               <ArrowRight className="w-4 h-4 flex-shrink-0" />
             </a>
           </div>
-        </motion.div>
 
-        {/* ── M visuel ──
-            Mobile (< 768px)  : SVG statique, compact, sous les CTAs
-            Tablette (768px+) : 3D canvas, sous le texte
-            Desktop (1024px+) : 3D canvas, colonne droite
-        */}
-        <motion.div
-          className="flex items-center justify-center
-            h-[180px] md:h-[300px] lg:h-[560px]
-            mt-4 md:mt-4 lg:mt-0"
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: 'easeOut', delay: 0.3 }}
-        >
-          {/* Mobile : SVG statique uniquement */}
-          <div className="flex md:hidden w-full h-full items-center justify-center">
+          {/* M décoratif mobile uniquement — SVG statique, sous les CTAs */}
+          <div className="md:hidden flex justify-center mt-10 select-none pointer-events-none">
             <svg
               viewBox="0 0 715 349"
               aria-hidden="true"
-              className="w-44 select-none pointer-events-none"
-              style={{ opacity: 0.15, filter: 'brightness(10)' }}
+              className="w-48"
+              style={{ opacity: 0.12, filter: 'brightness(10)' }}
             >
               <path d={M_PATH} fill="white" />
             </svg>
           </div>
+        </motion.div>
 
-          {/* Tablette+ : 3D */}
-          <div className="hidden md:block w-full h-full">
-            {canRender3D ? (
-              <MeliozGlass3DLazy />
-            ) : (
-              <div className="flex items-center justify-center w-full h-full">
-                <svg
-                  viewBox="0 0 715 349"
-                  aria-hidden="true"
-                  className="w-56 lg:w-72 select-none pointer-events-none"
-                  style={{ opacity: 0.2, filter: 'brightness(10)' }}
-                >
-                  <path d={M_PATH} fill="white" />
-                </svg>
-              </div>
-            )}
+        {/* ── Colonne M 3D — tablette (768px+) et desktop ──
+            Hauteur pixel explicite + absolute inset-0 pour que le Canvas
+            reçoive des dimensions définies, sans dépendre de h-full en chaîne.
+        */}
+        <motion.div
+          className="hidden md:block lg:flex-1"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.1, ease: 'easeOut', delay: 0.3 }}
+        >
+          {/* Boîte avec hauteur pixel selon breakpoint */}
+          <div
+            className="relative md:h-[320px] lg:h-[560px] mt-6 lg:mt-0"
+          >
+            {/* absolute inset-0 garantit que le Canvas hérite des px exacts */}
+            <div className="absolute inset-0">
+              {canRender3D ? (
+                <MeliozGlass3DLazy />
+              ) : (
+                <div className="flex items-center justify-center w-full h-full">
+                  <svg
+                    viewBox="0 0 715 349"
+                    aria-hidden="true"
+                    className="w-56 lg:w-72 select-none pointer-events-none"
+                    style={{ opacity: 0.2, filter: 'brightness(10)' }}
+                  >
+                    <path d={M_PATH} fill="white" />
+                  </svg>
+                </div>
+              )}
+            </div>
           </div>
         </motion.div>
 
