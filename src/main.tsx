@@ -26,7 +26,6 @@ if (isDev) {
     { default: Privacy },
     { default: PlanSite },
     { default: ConditionsGenerales },
-    { default: BookACall },
     { default: CookieBanner },
     { default: NotFound },
     { default: SplashScreen },
@@ -42,7 +41,6 @@ if (isDev) {
     import('./pages/Privacy.tsx'),
     import('./pages/PlanSite.tsx'),
     import('./pages/ConditionsGenerales.tsx'),
-    import('./pages/BookACall.tsx'),
     import('./components/CookieBanner.tsx'),
     import('./pages/NotFound.tsx'),
     import('./components/SplashScreen.tsx'),
@@ -75,8 +73,7 @@ if (isDev) {
         return <PlanSite />;
       case '/conditions-generales':
         return <ConditionsGenerales />;
-      case '/book-a-call':
-        return <BookACall />;
+
       case '/':
         return <App />;
       default:
@@ -122,7 +119,6 @@ if (isDev) {
   const Privacy = lazy(() => import('./pages/Privacy.tsx'));
   const PlanSite = lazy(() => import('./pages/PlanSite.tsx'));
   const ConditionsGenerales = lazy(() => import('./pages/ConditionsGenerales.tsx'));
-  const BookACall = lazy(() => import('./pages/BookACall.tsx'));
   const CookieBanner = lazy(() => import('./components/CookieBanner.tsx'));
   const NotFound = lazy(() => import('./pages/NotFound.tsx'));
 
@@ -153,8 +149,7 @@ if (isDev) {
         return <PlanSite />;
       case '/conditions-generales':
         return <ConditionsGenerales />;
-      case '/book-a-call':
-        return <BookACall />;
+
       case '/':
         return <App />;
       default:

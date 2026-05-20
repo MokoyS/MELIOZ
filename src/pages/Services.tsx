@@ -128,8 +128,8 @@ export default function Services() {
                 Donnons une nouvelle dimension à votre présence digitale.
               </h2>
               <p className="font-body text-[15px] md:text-[18px] text-melioz-offwhite/70 mb-8 md:mb-10 max-w-xl mx-auto leading-relaxed">Discutons de vos besoins et trouvons ensemble la solution idéale.</p>
-              <a href="/book-a-call" className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium rounded-xl hover:bg-melioz-navy hover:text-melioz-offwhite transition-colors duration-200">
-                Réserver un créneau <ArrowRight className="w-5 h-5" />
+              <a href="/contact" className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium rounded-xl hover:bg-melioz-navy hover:text-melioz-offwhite transition-colors duration-200">
+                Nous contacter <ArrowRight className="w-5 h-5" />
               </a>
             </AnimatedSection>
           </div>

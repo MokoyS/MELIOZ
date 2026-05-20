@@ -32,23 +32,15 @@ export default function CTADevis() {
             Transformons votre projet en réalité.
           </h2>
           <p className="font-body text-[18px] text-melioz-offwhite/70 max-w-xl mx-auto mb-10 leading-relaxed">
-            Un échange de 15 minutes suffit pour comprendre vos besoins et vous proposer une approche adaptée.
+            Décrivez-nous votre projet et on revient vers vous sous 24h avec une approche adaptée.
           </p>
-          <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center">
-            <a
-              href="/book-a-call"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium text-sm md:text-[15px] rounded-xl hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
-            >
-              Réserver un appel gratuit
-              <ArrowRight className="w-4 h-4 flex-shrink-0" />
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-melioz-offwhite/30 text-melioz-offwhite font-body font-medium text-sm md:text-[15px] rounded-xl hover:border-melioz-offwhite/60 transition-colors duration-200 whitespace-nowrap"
-            >
-              Nous écrire
-            </a>
-          </div>
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium text-sm md:text-[15px] rounded-xl hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
+          >
+            Nous contacter
+            <ArrowRight className="w-4 h-4 flex-shrink-0" />
+          </a>
         </AnimatedSection>
       </div>
     </section>

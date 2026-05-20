@@ -70,8 +70,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/book-a-call" className="font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
-                  Réserver un appel
+                <a href="/contact" className="font-body text-sm text-melioz-offwhite/60 hover:text-melioz-offwhite transition-colors duration-200">
+                  Nous contacter
                 </a>
               </li>
             </ul>

@@ -118,8 +118,8 @@ export default function Agence() {
               <p className="font-body text-[15px] md:text-[18px] text-melioz-offwhite/70 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
                 Notre mission est de briser les barrières techniques pour offrir aux entreprises en pleine croissance les outils des leaders du marché.
               </p>
-              <a href="/book-a-call" className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium rounded-xl hover:bg-melioz-navy hover:text-melioz-offwhite transition-colors duration-200">
-                Réserver un appel <ArrowRight className="w-5 h-5" />
+              <a href="/contact" className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-melioz-offwhite text-melioz-electric font-body font-medium rounded-xl hover:bg-melioz-navy hover:text-melioz-offwhite transition-colors duration-200">
+                Nous contacter <ArrowRight className="w-5 h-5" />
               </a>
             </AnimatedSection>
           </div>

@@ -204,20 +204,12 @@ export default function RealisationDetail({ slug }: { slug: string }) {
               <p className="font-body text-[15px] md:text-[18px] text-melioz-offwhite/75 max-w-xl mx-auto mb-8 md:mb-10 leading-relaxed">
                 Parlons-en. On prend le temps de comprendre vos besoins avant de proposer quoi que ce soit.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-melioz-offwhite text-melioz-electric font-body font-medium text-sm md:text-[15px] rounded-xl hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
-                >
-                  Nous contacter <ArrowUpRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="/book-a-call"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-melioz-offwhite/25 text-melioz-offwhite/80 font-body font-medium text-sm md:text-[15px] rounded-xl hover:border-melioz-offwhite/50 hover:text-melioz-offwhite transition-all duration-200 whitespace-nowrap"
-                >
-                  Réserver un appel
-                </a>
-              </div>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-melioz-offwhite text-melioz-electric font-body font-medium text-sm md:text-[15px] rounded-xl hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
+              >
+                Nous contacter <ArrowUpRight className="w-4 h-4" />
+              </a>
             </AnimatedSection>
           </div>
         </section>

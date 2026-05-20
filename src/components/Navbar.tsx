@@ -104,7 +104,7 @@ export default function Navbar({ light = false }: NavbarProps) {
 
           {/* Desktop CTA */}
           <a
-            href="/book-a-call"
+            href="/contact"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-melioz-electric text-melioz-offwhite font-body text-sm font-medium rounded-xl hover:-translate-y-0.5 transition-transform duration-200 whitespace-nowrap"
           >
             Démarrer un projet
@@ -172,7 +172,7 @@ export default function Navbar({ light = false }: NavbarProps) {
           ))}
 
           <a
-            href="/book-a-call"
+            href="/contact"
             onClick={() => setIsMenuOpen(false)}
             className="mt-6 w-full max-w-[280px] bg-melioz-electric text-melioz-offwhite font-body font-semibold
               px-8 py-4 rounded-xl text-center text-[15px] hover:bg-melioz-electric/90 transition-colors whitespace-nowrap"

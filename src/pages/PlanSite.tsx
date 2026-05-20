@@ -33,7 +33,6 @@ export default function PlanSite() {
       bgColor: 'bg-melioz-lavender/20',
       links: [
         { label: 'Contact', href: '/contact', description: 'Nous contacter directement' },
-        { label: 'Réserver un appel', href: '/book-a-call', description: 'Réservez un appel de 15 minutes pour discuter de votre projet' },
       ],
     },
     {
